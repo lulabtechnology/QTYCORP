@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 96" role="img" aria-label="Quality Techno Services">
+  <rect width="460" height="96" rx="20" fill="none"/>
+  <g transform="translate(12 12)">
+    <rect x="0" y="0" width="72" height="72" rx="20" fill="#F47A20"/>
+    <path d="M24 20h20c14 0 24 10 24 24s-10 24-24 24H24V20zm18 14h-4v20h4c7.2 0 12-3.8 12-10s-4.8-10-12-10z" fill="#F5F4F1"/>
+  </g>
+  <text x="102" y="38" fill="#F5F4F1" font-size="28" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700">Quality</text>
+  <text x="102" y="68" fill="#D6DEE8" font-size="24" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700">Techno Services</text>
+  <text x="348" y="68" fill="#F47A20" font-size="13" font-family="DejaVu Sans, Arial, sans-serif" letter-spacing="2">QTS</text>
+</svg>

@@ -1,0 +1,67 @@
+@import 'tailwindcss';
+
+:root {
+  --qts-navy: #1f2c46;
+  --qts-navy-soft: #273754;
+  --qts-blue: #32486c;
+  --qts-blue-muted: #6d7b92;
+  --qts-cream: #f5f4f1;
+  --qts-line: rgba(30, 36, 48, 0.08);
+  --qts-ink: #1e2430;
+  --qts-muted: #556173;
+  --qts-ink-soft: #eef1f5;
+  --qts-accent: #f47a20;
+  --qts-accent-strong: #d96612;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--qts-cream);
+  color: var(--qts-ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-manrope), var(--font-inter), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(244, 122, 32, 0.22);
+  color: var(--qts-ink);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-manrope);
+}
