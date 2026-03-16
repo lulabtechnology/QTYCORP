@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { assets } from '@/lib/asset-routes';
 
 export function HeroVideo() {
-  const [poster, setPoster] = useState(assets.posters.homeHeroDesktop);
+  const [poster, setPoster] = useState<string>(assets.posters.homeHeroDesktop);
   const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
