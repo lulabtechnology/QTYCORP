@@ -20,9 +20,9 @@ export default function ContactPage() {
 
       <section className="bg-white py-24">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
             <Reveal>
-              <div>
+              <div className="min-w-0">
                 <SectionHeading
                   eyebrow="Información de contacto"
                   title="Estamos para ayudarle"
@@ -33,12 +33,23 @@ export default function ContactPage() {
                     const Icon = item.icon;
                     return (
                       <Reveal key={item.label} delay={index * 0.05}>
-                        <a href={item.href} className="rounded-[24px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] p-5 transition hover:border-[var(--qts-accent)] hover:bg-white">
-                          <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
-                            <Icon className="size-5" />
+                        <a
+                          href={item.href}
+                          className="group flex h-full min-w-0 rounded-[24px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] p-5 transition hover:border-[var(--qts-accent)] hover:bg-white hover:shadow-[0_18px_40px_rgba(9,17,31,0.06)] sm:p-6"
+                        >
+                          <div className="flex min-w-0 items-start gap-4">
+                            <div className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)] transition group-hover:bg-[rgba(244,122,32,0.14)]">
+                              <Icon className="size-5" />
+                            </div>
+                            <div className="min-w-0">
+                              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--qts-blue-muted)] sm:text-xs sm:tracking-[0.28em]">
+                                {item.label}
+                              </p>
+                              <p className="mt-2 text-[15px] font-semibold leading-6 text-[var(--qts-ink)] [overflow-wrap:anywhere] sm:text-base">
+                                {item.value}
+                              </p>
+                            </div>
                           </div>
-                          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.28em] text-[var(--qts-blue-muted)]">{item.label}</p>
-                          <p className="mt-2 text-base font-semibold leading-7 text-[var(--qts-ink)]">{item.value}</p>
                         </a>
                       </Reveal>
                     );
@@ -48,13 +59,13 @@ export default function ContactPage() {
                   <div className="mt-6 rounded-[28px] border border-[var(--qts-line)] bg-[var(--qts-navy)] p-6 text-white">
                     <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/54">Cobertura regional</p>
                     <p className="mt-4 text-lg leading-8 text-white/76">Panamá · USA · Venezuela · Mercados estratégicos de la región.</p>
-                    <p className="mt-4 text-sm leading-7 text-white/62">Correo: {site.email} · Teléfono Panamá: {site.phonePanama} · Teléfono USA: {site.phoneUsa}</p>
+                    <p className="mt-4 text-sm leading-7 text-white/62 [overflow-wrap:anywhere]">Correo: {site.email} · Teléfono Panamá: {site.phonePanama} · Teléfono USA: {site.phoneUsa}</p>
                   </div>
                 </Reveal>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <div id="formulario" className="rounded-[32px] border border-[var(--qts-line)] bg-[var(--qts-cream)] p-4 shadow-[0_20px_70px_rgba(9,17,31,0.08)] sm:p-6">
+              <div id="formulario" className="min-w-0 rounded-[32px] border border-[var(--qts-line)] bg-[var(--qts-cream)] p-4 shadow-[0_20px_70px_rgba(9,17,31,0.08)] sm:p-6">
                 <div className="relative min-h-[240px] overflow-hidden rounded-[26px] border border-[var(--qts-line)]">
                   <Image src={assets.contact.background} alt="Contacto y asesoría técnica QTS" fill className="object-cover" />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,43,0.22),rgba(15,24,43,0.74))]" />
