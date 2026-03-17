@@ -55,8 +55,6 @@ export const navLinks = [
       { label: 'Servicios', href: '/servicios' },
     ],
   },
-  { label: 'Industrias', href: '/#industrias' },
-  { label: 'Fabricantes', href: '/#fabricantes' },
   { label: 'Centro de Recursos', href: '/centro-de-recursos' },
   { label: 'Contacto', href: '/contacto' },
 ] as const;
@@ -90,7 +88,7 @@ export const institutionalPillars = [
     title: 'Cobertura regional',
     description:
       'Atención comercial y técnica en Panamá y mercados estratégicos de Latinoamérica para requerimientos de alta exigencia.',
-    icon: Landmark,
+    icon: MapPinned,
   },
   {
     title: 'Enfoque consultivo',
@@ -102,7 +100,7 @@ export const institutionalPillars = [
     title: 'Soluciones especializadas',
     description:
       'Portafolio orientado a bombeo, manejo de fluidos, reparación, protección de activos y servicios industriales.',
-    icon: ShieldPlus,
+    icon: ShieldCheck,
   },
 ];
 

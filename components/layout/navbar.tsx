@@ -50,7 +50,7 @@ export function Navbar() {
                 width={170}
                 height={44}
                 priority
-                className="h-9 w-auto"
+                className="h-9 w-auto lg:h-10"
               />
             </Link>
 
@@ -62,7 +62,7 @@ export function Navbar() {
                     <div key={item.label} className="group relative">
                       <button
                         className={cn(
-                          'inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-colors',
+                          'inline-flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium transition-colors xl:px-4',
                           solid ? 'text-[var(--qts-ink)] hover:bg-[var(--qts-ink-soft)]' : 'text-white/82 hover:bg-white/10',
                         )}
                       >
@@ -90,7 +90,7 @@ export function Navbar() {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      'rounded-full px-4 py-2 text-sm font-medium transition-colors',
+                      'whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium transition-colors xl:px-4',
                       solid ? 'text-[var(--qts-ink)] hover:bg-[var(--qts-ink-soft)]' : 'text-white/82 hover:bg-white/10',
                       active && (solid ? 'bg-[var(--qts-ink-soft)] text-[var(--qts-accent)]' : 'bg-white/10 text-white'),
                     )}

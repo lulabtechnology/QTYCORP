@@ -9,23 +9,24 @@ export function ProposalGrid() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Propuesta integral"
             title="Una propuesta integral para la industria"
             description="Combinamos representación técnica, soluciones especializadas y acompañamiento comercial para aportar valor real en aplicaciones donde la confiabilidad y la continuidad operativa son determinantes."
             light
           />
         </Reveal>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
           {integralProposal.map((item, index) => {
             const Icon = item.icon;
             return (
               <Reveal key={item.title} delay={index * 0.08}>
-                <div className="rounded-[28px] border border-white/10 bg-white/6 p-7 backdrop-blur-sm">
-                  <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.14)] text-[var(--qts-accent)]">
-                    <Icon className="size-5" />
+                <div className="flex h-full flex-col rounded-[28px] border border-white/10 bg-white/6 p-7 backdrop-blur-sm">
+                  <div className="flex items-center gap-4">
+                    <div className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.14)] text-[var(--qts-accent)]">
+                      <Icon className="size-5" />
+                    </div>
+                    <h3 className="text-xl font-semibold tracking-[-0.03em]">{item.title}</h3>
                   </div>
-                  <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em]">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/72">{item.description}</p>
+                  <p className="mt-5 text-sm leading-7 text-white/72">{item.description}</p>
                 </div>
               </Reveal>
             );
