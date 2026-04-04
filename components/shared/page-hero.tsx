@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { ButtonLink } from '@/components/shared/button-link';
 import { Container } from '@/components/shared/container';
+import { cn } from '@/lib/utils';
 
 export function PageHero({
   eyebrow,
@@ -9,6 +10,8 @@ export function PageHero({
   body,
   image,
   ctas,
+  imageOpacityClassName,
+  overlayClassName,
 }: {
   eyebrow?: string;
   title: string;
@@ -16,13 +19,20 @@ export function PageHero({
   body?: string;
   image: string;
   ctas?: Array<{ label: string; href: string }>;
+  imageOpacityClassName?: string;
+  overlayClassName?: string;
 }) {
   return (
     <section className="relative overflow-hidden bg-[var(--qts-navy)] pt-30 text-white">
-      <div className="absolute inset-0 opacity-60">
+      <div className={cn('absolute inset-0 opacity-60', imageOpacityClassName)}>
         <Image src={image} alt="Fondo industrial de QTS" fill className="object-cover" priority />
       </div>
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(14,24,44,0.92)_0%,rgba(18,31,54,0.86)_44%,rgba(26,42,67,0.55)_100%)]" />
+      <div
+        className={cn(
+          'absolute inset-0 bg-[linear-gradient(120deg,rgba(14,24,44,0.92)_0%,rgba(18,31,54,0.86)_44%,rgba(26,42,67,0.55)_100%)]',
+          overlayClassName,
+        )}
+      />
       <Container className="relative z-10 py-24 sm:py-28">
         <div className="max-w-4xl">
           {eyebrow ? <p className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] text-white/58">{eyebrow}</p> : null}

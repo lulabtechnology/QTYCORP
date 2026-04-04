@@ -16,39 +16,38 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contacto" title={contactPage.hero.title} description={contactPage.hero.description} image={contactPage.hero.image} ctas={[{ label: 'Solicitar asesoría técnica', href: '#formulario' }, { label: 'Enviar consulta', href: '#formulario' }]} />
+      <PageHero
+        eyebrow="Contacto"
+        title={contactPage.hero.title}
+        description={contactPage.hero.description}
+        image={contactPage.hero.image}
+        ctas={[{ label: 'Solicitar asesoría técnica', href: '#formulario' }, { label: 'Enviar consulta', href: '#formulario' }]}
+        imageOpacityClassName="opacity-72"
+        overlayClassName="bg-[linear-gradient(120deg,rgba(14,24,44,0.78)_0%,rgba(18,31,54,0.68)_42%,rgba(26,42,67,0.34)_100%)]"
+      />
 
       <section className="bg-white py-24">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
             <Reveal>
               <div className="min-w-0">
-                <SectionHeading
-                  eyebrow="Información de contacto"
-                  title="Estamos para ayudarle"
-                  description={contactPage.intro}
-                />
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <SectionHeading eyebrow="Información de contacto" title="Estamos para ayudarle" description={contactPage.intro} />
+                <div className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2">
                   {contactPage.infoCards.map((item, index) => {
                     const Icon = item.icon;
                     return (
                       <Reveal key={item.label} delay={index * 0.05}>
-                        <a
-                          href={item.href}
-                          className="group flex h-full min-w-0 rounded-[24px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] p-5 transition hover:border-[var(--qts-accent)] hover:bg-white hover:shadow-[0_18px_40px_rgba(9,17,31,0.06)] sm:p-6"
-                        >
-                          <div className="flex min-w-0 items-start gap-4">
-                            <div className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)] transition group-hover:bg-[rgba(244,122,32,0.14)]">
-                              <Icon className="size-5" />
-                            </div>
-                            <div className="min-w-0">
-                              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--qts-blue-muted)] sm:text-xs sm:tracking-[0.28em]">
-                                {item.label}
-                              </p>
-                              <p className="mt-2 text-[15px] font-semibold leading-6 text-[var(--qts-ink)] [overflow-wrap:anywhere] sm:text-base">
-                                {item.value}
-                              </p>
-                            </div>
+                        <a href={item.href} className="group flex min-w-0 items-start gap-4 py-1 transition hover:opacity-80">
+                          <div className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
+                            <Icon className="size-5" />
+                          </div>
+                          <div className="min-w-0 pt-1">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--qts-blue-muted)] sm:text-xs sm:tracking-[0.28em]">
+                              {item.label}
+                            </p>
+                            <p className="mt-2 text-[15px] font-semibold leading-6 text-[var(--qts-ink)] [overflow-wrap:anywhere] sm:text-base">
+                              {item.value}
+                            </p>
                           </div>
                         </a>
                       </Reveal>
@@ -56,10 +55,12 @@ export default function ContactPage() {
                   })}
                 </div>
                 <Reveal delay={0.08}>
-                  <div className="mt-6 rounded-[28px] border border-[var(--qts-line)] bg-[var(--qts-navy)] p-6 text-white">
-                    <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/54">Cobertura regional</p>
-                    <p className="mt-4 text-lg leading-8 text-white/76">Panamá · USA · Venezuela · Mercados estratégicos de la región.</p>
-                    <p className="mt-4 text-sm leading-7 text-white/62 [overflow-wrap:anywhere]">Correo: {site.email} · Teléfono Panamá: {site.phonePanama} · Teléfono USA: {site.phoneUsa}</p>
+                  <div className="mt-10 border-t border-[var(--qts-line)] pt-8">
+                    <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-blue-muted)]">Cobertura regional</p>
+                    <p className="mt-4 text-lg leading-8 text-[var(--qts-ink)]">Panamá · USA · Venezuela · Mercados estratégicos de la región.</p>
+                    <p className="mt-4 text-sm leading-7 text-[var(--qts-muted)] [overflow-wrap:anywhere]">
+                      Correo: {site.email} · Teléfono Panamá: {site.phonePanama} · Teléfono USA: {site.phoneUsa}
+                    </p>
                   </div>
                 </Reveal>
               </div>
@@ -68,9 +69,9 @@ export default function ContactPage() {
               <div id="formulario" className="min-w-0 rounded-[32px] border border-[var(--qts-line)] bg-[var(--qts-cream)] p-4 shadow-[0_20px_70px_rgba(9,17,31,0.08)] sm:p-6">
                 <div className="relative min-h-[240px] overflow-hidden rounded-[26px] border border-[var(--qts-line)]">
                   <Image src={assets.contact.background} alt="Contacto y asesoría técnica QTS" fill className="object-cover" />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,43,0.22),rgba(15,24,43,0.74))]" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,43,0.18),rgba(15,24,43,0.62))]" />
                   <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                    <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/56">Envíenos su consulta</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/60">Envíenos su consulta</p>
                     <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em]">Un canal directo y profesional para consultas técnicas y comerciales</h2>
                   </div>
                 </div>
