@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, CircleGauge, ShieldCheck, Wrench, Clock3 } from 'lucide-react';
 import { CtaSection } from '@/components/shared/cta-section';
 import { Container } from '@/components/shared/container';
 import { PageHero } from '@/components/shared/page-hero';
@@ -15,6 +15,29 @@ export const metadata = {
 };
 
 const featuredManufacturers = ['Unique Polymer Systems', 'AGI Industries', 'NOV'];
+
+const valueItems = [
+  {
+    title: 'Mejor alineación con la aplicación',
+    description: 'Seleccionamos soluciones en función de las condiciones reales del proceso, no de especificaciones genéricas.',
+    icon: CircleGauge,
+  },
+  {
+    title: 'Mayor respaldo para la decisión de compra',
+    description: 'Integramos criterios técnicos, experiencia en campo y soporte de fabricantes para reducir incertidumbre.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Integración con servicios y soporte',
+    description: 'No solo suministramos productos: conectamos cada solución con instalación, mantenimiento y seguimiento.',
+    icon: Wrench,
+  },
+  {
+    title: 'Enfoque en continuidad operativa',
+    description: 'Priorizamos confiabilidad, disponibilidad y reducción de paradas no programadas.',
+    icon: Clock3,
+  },
+] as const;
 
 export default function ProductsPage() {
   const productLogos = featuredManufacturers
@@ -92,6 +115,58 @@ export default function ProductsPage() {
         <Container>
           <Reveal>
             <SectionHeading
+              eyebrow="Aporte de valor"
+              title="Más que productos: soluciones con criterio técnico y visión comercial"
+              align="center"
+              className="mx-auto max-w-6xl"
+            />
+          </Reveal>
+          <div className="mt-14 grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+            <Reveal>
+              <div className="relative min-h-[650px] overflow-hidden rounded-[36px] border border-[rgba(30,36,48,0.08)] shadow-[0_24px_72px_rgba(9,17,31,0.08)]">
+                <Image src={assets.products.portfolio} alt="Valor técnico y comercial del portafolio" fill className="object-cover" />
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div>
+                <div className="max-w-3xl space-y-6 text-[1.03rem] leading-9 text-[var(--qts-muted)]">
+                  <p>
+                    En QTS no presentamos el portafolio como una lista de referencias aisladas, sino como un conjunto de soluciones que deben
+                    responder a una necesidad real de operación.
+                  </p>
+                  <p>
+                    Nuestro valor está en ayudar a seleccionar mejor, evaluar con mayor claridad y conectar cada requerimiento con una
+                    alternativa técnicamente confiable y comercialmente viable.
+                  </p>
+                </div>
+                <div className="mt-10 grid gap-6">
+                  {valueItems.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <Reveal key={item.title} delay={index * 0.05}>
+                        <div className="flex items-start gap-5">
+                          <div className="flex size-20 shrink-0 items-center justify-center rounded-[26px] border border-[rgba(244,122,32,0.12)] bg-white shadow-[0_12px_34px_rgba(18,24,39,0.06)]">
+                            <Icon className="size-10 text-[var(--qts-accent)]" strokeWidth={1.8} />
+                          </div>
+                          <div>
+                            <h3 className="text-[2rem] font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)]">{item.title}</h3>
+                            <p className="mt-2 max-w-3xl text-base leading-8 text-[var(--qts-muted)]">{item.description}</p>
+                          </div>
+                        </div>
+                      </Reveal>
+                    );
+                  })}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-[linear-gradient(180deg,#faf8ff_0%,#ffffff_55%,#f8fbff_100%)] py-24">
+        <Container>
+          <Reveal>
+            <SectionHeading
               title={productsPage.evaluationSection.title}
               description={productsPage.evaluationSection.description}
               align="center"
@@ -150,34 +225,6 @@ export default function ProductsPage() {
               <div className="relative min-h-[420px] overflow-hidden rounded-[32px] border border-white/10">
                 <Image src={assets.products.alliances} alt="Alianzas estratégicas" fill className="object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,43,0.14),rgba(15,24,43,0.72))]" />
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-[var(--qts-ink-soft)] py-24">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-            <Reveal>
-              <div className="relative min-h-[430px] overflow-hidden rounded-[32px] border border-[var(--qts-line)] shadow-[0_20px_70px_rgba(9,17,31,0.1)]">
-                <Image src={assets.products.portfolio} alt="Cómo aporta valor el portafolio" fill className="object-cover" />
-              </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <div>
-                <SectionHeading
-                  eyebrow="Aporte de valor"
-                  title="Más que productos: soluciones con criterio técnico y visión comercial"
-                  description={productsPage.valueBody}
-                />
-                <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                  {productsPage.valueBullets.map((item, index) => (
-                    <Reveal key={item} delay={index * 0.05}>
-                      <div className="rounded-[22px] border border-[var(--qts-line)] bg-white px-5 py-4 text-sm font-semibold text-[var(--qts-ink)]">{item}</div>
-                    </Reveal>
-                  ))}
-                </div>
               </div>
             </Reveal>
           </div>

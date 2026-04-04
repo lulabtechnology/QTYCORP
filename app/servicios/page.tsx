@@ -37,6 +37,24 @@ const processCards = [
   },
 ] as const;
 
+const featuredServiceCards = [
+  {
+    title: 'Asesoría técnica y comercial',
+    description: 'Acompañamiento en la evaluación de requerimientos, análisis de aplicaciones y definición de alternativas alineadas a la operación.',
+    src: '/images/services/cards/advisory.jpg',
+  },
+  {
+    title: 'Soporte para selección de soluciones',
+    description: 'Identificación de tecnologías, productos y configuraciones adecuadas para activos y procesos críticos.',
+    src: '/images/services/cards/selection.jpg',
+  },
+  {
+    title: 'Procura y acompañamiento de proyectos',
+    description: 'Seguimiento cercano durante las etapas de evaluación, gestión comercial y suministro especializado.',
+    src: '/images/services/cards/projects.jpg',
+  },
+] as const;
+
 export default function ServicesPage() {
   return (
     <>
@@ -46,6 +64,8 @@ export default function ServicesPage() {
         description={servicesPage.hero.description}
         image={servicesPage.hero.image}
         ctas={[{ label: 'Solicitar asesoría técnica', href: '/contacto' }, { label: 'Contactar a QTS', href: '/contacto#formulario' }]}
+        imageOpacityClassName="opacity-80"
+        overlayClassName="bg-[linear-gradient(120deg,rgba(14,24,44,0.78)_0%,rgba(18,31,54,0.68)_42%,rgba(26,42,67,0.34)_100%)]"
       />
 
       <section className="bg-white py-24">
@@ -63,7 +83,7 @@ export default function ServicesPage() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="relative min-h-[470px] overflow-hidden rounded-[32px] border border-[var(--qts-line)] shadow-[0_20px_70px_rgba(9,17,31,0.1)]">
-                <Image src={assets.services.categories} alt="Servicios industriales QTS" fill className="object-cover" />
+                <Image src="/images/services/intro-operador.jpg" alt="Operación industrial monitoreada por QTS" fill className="object-cover" />
               </div>
             </Reveal>
           </div>
@@ -79,21 +99,20 @@ export default function ServicesPage() {
               description="Capacidades orientadas a confiabilidad, seguridad, cumplimiento normativo y acompañamiento técnico-comercial cercano."
             />
           </Reveal>
-          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {servicesPage.categories.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <Reveal key={service.title} delay={index * 0.05}>
-                  <div className="h-full rounded-[28px] border border-[var(--qts-line)] bg-white p-6 shadow-[0_14px_44px_rgba(9,17,31,0.06)]">
-                    <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
-                      <Icon className="size-5" />
-                    </div>
-                    <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-[var(--qts-ink)]">{service.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-[var(--qts-muted)]">{service.description}</p>
+          <div className="mt-12 grid gap-6 xl:grid-cols-3">
+            {featuredServiceCards.map((service, index) => (
+              <Reveal key={service.title} delay={index * 0.05}>
+                <article className="h-full overflow-hidden rounded-[30px] border border-[var(--qts-line)] bg-white shadow-[0_18px_52px_rgba(9,17,31,0.08)]">
+                  <div className="relative aspect-[16/7] overflow-hidden">
+                    <Image src={service.src} alt={service.title} fill className="object-cover" />
                   </div>
-                </Reveal>
-              );
-            })}
+                  <div className="p-7">
+                    <h3 className="text-[1.95rem] font-semibold leading-tight tracking-[-0.035em] text-[var(--qts-ink)]">{service.title}</h3>
+                    <p className="mt-4 text-base leading-8 text-[var(--qts-muted)]">{service.description}</p>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>
