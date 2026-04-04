@@ -178,7 +178,7 @@ export default function ServicesPage() {
             <Reveal>
               <div className="relative min-h-[640px] overflow-hidden rounded-[34px] border border-[var(--qts-line)] shadow-[0_22px_72px_rgba(9,17,31,0.1)]">
                 <Image
-                  src={assets.home.industries.energia}
+                  src={assets.services.featured}
                   alt="Capacidades de servicio enfocadas en seguridad y continuidad operativa"
                   fill
                   className="object-cover object-center"
@@ -214,45 +214,42 @@ export default function ServicesPage() {
       </section>
 
       <section className="relative overflow-hidden bg-[var(--qts-navy)] py-24 text-white">
-        <div className="absolute inset-y-0 right-0 hidden w-[48%] lg:block">
-          <Image src={assets.services.hero} alt="Soporte técnico y servicios industriales" fill className="object-cover object-[72%_center]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,24,43,0.85)_0%,rgba(15,24,43,0.28)_46%,rgba(15,24,43,0.16)_100%)]" />
+        <div className="absolute inset-0">
+          <Image src={assets.services.approach} alt="Soporte técnico y servicios industriales" fill className="object-cover object-center" />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,24,43,0.88)_0%,rgba(15,24,43,0.78)_38%,rgba(15,24,43,0.54)_60%,rgba(15,24,43,0.18)_100%)] lg:hidden" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,18,34,0.84)_0%,rgba(12,22,39,0.72)_36%,rgba(15,24,43,0.3)_66%,rgba(15,24,43,0.18)_100%)]" />
         <Container className="relative z-10">
-          <div className="grid gap-12 lg:grid-cols-[1fr_0.92fr] lg:items-center">
+          <div className="max-w-3xl">
             <Reveal>
-              <div className="max-w-2xl">
-                <SectionHeading
-                  eyebrow="Cómo agregamos valor"
-                  title="Soporte técnico y servicios que reducen riesgo y mejoran el desempeño operativo"
-                  description="Ayudamos a nuestros clientes a reducir incertidumbre, optimizar la selección de soluciones y ejecutar con mayor seguridad en aplicaciones críticas, donde el desempeño del activo y la continuidad operativa son clave."
-                  light
-                />
-                <div className="mt-10 space-y-4">
-                  {valueSupportItems.map((item, index) => {
-                    const Icon = item.icon;
-                    return (
-                      <Reveal key={item.title} delay={index * 0.05}>
-                        <div className="flex items-center gap-4 rounded-[24px] border border-white/14 bg-white/8 px-5 py-4 shadow-[0_18px_40px_rgba(3,9,20,0.14)] backdrop-blur-[8px]">
-                          <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[var(--qts-accent)]/16 text-[var(--qts-accent)]">
-                            <Icon className="size-5" />
-                          </span>
-                          <p className="text-[1.1rem] font-semibold tracking-[-0.02em] text-white/92">{item.title}</p>
-                        </div>
-                      </Reveal>
-                    );
-                  })}
-                </div>
-              </div>
+              <SectionHeading
+                eyebrow="Cómo agregamos valor"
+                title="Soporte técnico y servicios que reducen riesgo y mejoran el desempeño operativo"
+                description="Ayudamos a nuestros clientes a reducir incertidumbre, optimizar la selección de soluciones y ejecutar con mayor seguridad en aplicaciones críticas, donde el desempeño del activo y la continuidad operativa son clave."
+                light
+              />
             </Reveal>
-            <div className="relative min-h-[520px] overflow-hidden rounded-[34px] border border-white/12 lg:hidden">
-              <Image src={assets.services.hero} alt="Equipo de QTS en planta industrial" fill className="object-cover object-[72%_center]" />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,43,0.08),rgba(15,24,43,0.2))]" />
+            <div className="mt-10 space-y-4">
+              {valueSupportItems.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <Reveal key={item.title} delay={index * 0.05}>
+                    <div className="flex items-center gap-4 rounded-[24px] border border-white/16 bg-[rgba(255,255,255,0.08)] px-5 py-4 shadow-[0_18px_40px_rgba(3,9,20,0.14)] backdrop-blur-[8px]">
+                      <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-[rgba(244,122,32,0.24)] bg-[rgba(244,122,32,0.14)] text-[var(--qts-accent)]">
+                        <Icon className="size-5" />
+                      </span>
+                      <p className="text-[1.1rem] font-semibold tracking-[-0.02em] text-white/92">{item.title}</p>
+                    </div>
+                  </Reveal>
+                );
+              })}
             </div>
+            <p className="mt-8 text-sm leading-7 text-white/72 sm:text-base">
+              Aplicaciones críticas · Soporte técnico especializado · Enfoque en seguridad y continuidad
+            </p>
           </div>
         </Container>
       </section>
+
 
       <IndustriesGrid />
 
@@ -271,7 +268,7 @@ export default function ServicesPage() {
                   </p>
                 </div>
                 <div className="relative mt-8 aspect-[16/8] overflow-hidden border-y border-[var(--qts-line)]">
-                  <Image src={assets.home.solutions.services} alt="Equipo técnico evaluando una aplicación industrial" fill className="object-cover" />
+                  <Image src={assets.services.industries} alt="Equipo técnico evaluando una aplicación industrial" fill className="object-cover" />
                 </div>
                 <div className="space-y-6 px-8 py-8 sm:px-10 sm:py-10">
                   {processTimeline.map((step, index) => (

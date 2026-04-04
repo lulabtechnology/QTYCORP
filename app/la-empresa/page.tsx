@@ -136,9 +136,9 @@ export default function CompanyPage() {
       <section className="bg-[var(--qts-ink-soft)] py-24">
         <Container>
           <div className="overflow-hidden rounded-[40px] border border-[rgba(30,36,48,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,249,252,0.96))] px-8 py-10 shadow-[0_26px_90px_rgba(9,17,31,0.08)] sm:px-10 lg:px-12 lg:py-12">
-            <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
+            <div className="grid gap-10 xl:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] xl:items-start">
               <Reveal>
-                <div className="lg:col-span-5 lg:pr-8">
+                <div className="max-w-xl xl:sticky xl:top-28">
                   <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Valores</p>
                   <h2 className="mt-4 max-w-lg text-balance text-4xl font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)] sm:text-[3.2rem]">
                     Principios que guían nuestra forma de trabajar
@@ -149,32 +149,16 @@ export default function CompanyPage() {
                 </div>
               </Reveal>
 
-              <Reveal delay={0.05}>
-                <div className="lg:col-span-7 lg:pl-4">
-                  <div className="mx-auto h-full rounded-[30px] border border-[rgba(30,36,48,0.08)] bg-white p-7 shadow-[0_20px_60px_rgba(9,17,31,0.08)] lg:ml-auto lg:max-w-[430px]">
-                    <div className="flex items-start gap-5">
-                      <div className="inline-flex size-14 shrink-0 items-center justify-center rounded-[20px] bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
-                        <featuredValue.icon className="size-7" />
-                      </div>
-                      <div>
-                        <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[var(--qts-ink)]">{featuredValue.title}</h3>
-                        <p className="mt-3 text-lg leading-8 text-[var(--qts-muted)]">{featuredValue.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
-
-              <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 lg:col-span-12">
-                {remainingValues.map((value, index) => (
+              <div className="grid gap-6 md:grid-cols-2">
+                {[featuredValue, ...remainingValues].map((value, index) => (
                   <Reveal key={value.title} delay={index * 0.05}>
-                    <div className="h-full rounded-[28px] border border-[rgba(30,36,48,0.08)] bg-white p-7 shadow-[0_16px_44px_rgba(9,17,31,0.06)]">
-                      <div className="inline-flex size-12 items-center justify-center rounded-[18px] bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
+                    <article className="flex h-full flex-col rounded-[30px] border border-[rgba(30,36,48,0.08)] bg-white p-7 shadow-[0_18px_56px_rgba(9,17,31,0.06)]">
+                      <div className="inline-flex size-13 items-center justify-center rounded-[20px] bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
                         <value.icon className="size-6" />
                       </div>
-                      <h3 className="mt-5 text-2xl font-semibold leading-tight tracking-[-0.03em] text-[var(--qts-ink)]">{value.title}</h3>
+                      <h3 className="mt-5 text-[1.95rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--qts-ink)]">{value.title}</h3>
                       <p className="mt-3 text-base leading-8 text-[var(--qts-muted)]">{value.description}</p>
-                    </div>
+                    </article>
                   </Reveal>
                 ))}
               </div>
