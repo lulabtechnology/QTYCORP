@@ -43,9 +43,10 @@ export const assets = {
   services: {
     hero: '/images/services/hero-services.jpg',
     categories: '/images/services/categorias-servicios.jpg',
-    featured: '/images/services/servicios-destacados.jpg',
-    industries: '/images/services/industrias-servicios.jpg',
-    approach: '/images/services/enfoque-trabajo.jpg',
+    featured: '/images/services/featured-capacidades-real.jpg',
+    industries: '/images/services/industry-focus-real.jpg',
+    approach: '/images/services/value-support-real.jpg',
+    process: '/images/services/process-work-real.jpg',
   },
   products: {
     hero: '/images/products/hero-products.jpg',
@@ -83,8 +84,6 @@ export const assets = {
     unique: '/images/manufacturers/unique-polymer.svg',
     nov: '/images/manufacturers/nov.svg',
     agi: '/images/manufacturers/agi-industries.svg',
-    gorman: '/images/manufacturers/gorman-rupp.svg',
-    lcountries: '/images/manufacturers/lcountries.svg',
   },
   resourcesDocs: {
     catalogoGeneral: '/docs/resources/catalogo-general-qts.pdf',

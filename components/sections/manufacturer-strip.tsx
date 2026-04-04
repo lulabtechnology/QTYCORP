@@ -8,20 +8,22 @@ export function ManufacturerStrip() {
     <section id="fabricantes" className="relative z-10 -mt-8 bg-white pb-16 sm:-mt-10 lg:-mt-12">
       <Container>
         <Reveal>
-          <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-5xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Fabricantes y aliados</p>
-            <h2 className="mt-4 max-w-3xl text-balance text-3xl font-semibold tracking-[-0.03em] text-[var(--qts-ink)] sm:text-4xl">
-              Marcas y soluciones que respaldan nuestra propuesta de valor
+            <h2 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.03em] text-[var(--qts-ink)] sm:text-4xl">
+              Marcas que respaldan nuestra propuesta técnica
             </h2>
-            <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--qts-muted)] sm:text-lg">
-              En QTS conectamos a nuestros clientes con fabricantes y tecnologías reconocidas a nivel internacional,
-              brindando acompañamiento técnico-comercial cercano para aplicaciones de alta exigencia.
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[var(--qts-muted)] sm:text-lg">
+              QTS conecta a sus clientes con fabricantes reconocidos y soluciones confiables para aplicaciones industriales de alta exigencia.
             </p>
 
-            <div className="mt-10 grid items-center gap-x-8 gap-y-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="mx-auto mt-10 grid max-w-4xl items-center gap-5 sm:grid-cols-3">
               {manufacturerLogos.map((logo) => (
-                <div key={logo.name} className="flex min-h-16 items-center justify-center">
-                  <Image src={logo.src} alt={logo.name} width={170} height={52} className="h-9 w-auto opacity-95 md:h-10" />
+                <div
+                  key={logo.name}
+                  className="flex min-h-24 items-center justify-center rounded-[24px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] px-6 py-5 shadow-[0_14px_40px_rgba(9,17,31,0.06)]"
+                >
+                  <Image src={logo.src} alt={logo.name} width={180} height={56} className="h-10 w-auto object-contain opacity-95" />
                 </div>
               ))}
             </div>

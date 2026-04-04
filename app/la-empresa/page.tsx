@@ -13,16 +13,13 @@ export const metadata = {
 };
 
 export default function CompanyPage() {
-  const featuredValue = companyPage.values.find((value) => value.title === 'Integridad') ?? companyPage.values[0];
-  const remainingValues = companyPage.values.filter((value) => value.title !== featuredValue.title);
-
   return (
     <>
       <section className="relative overflow-hidden bg-[var(--qts-navy)] pt-30 text-white">
-        <div className="absolute inset-0 opacity-72">
+        <div className="absolute inset-0 opacity-76">
           <Image src={companyPage.hero.image} alt="Fondo industrial de QTS" fill className="object-cover object-center" priority />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(14,24,44,0.8)_0%,rgba(18,31,54,0.66)_42%,rgba(26,42,67,0.32)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(14,24,44,0.78)_0%,rgba(18,31,54,0.68)_42%,rgba(26,42,67,0.34)_100%)]" />
         <Container className="relative z-10 py-24 sm:py-28">
           <div className="max-w-4xl">
             <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-[3.65rem]">
@@ -101,7 +98,7 @@ export default function CompanyPage() {
           <div className="grid gap-10 xl:grid-cols-[1.02fr_0.98fr] xl:items-start">
             <Reveal>
               <div className="relative min-h-[540px] overflow-hidden rounded-[34px] border border-[var(--qts-line)] shadow-[0_22px_80px_rgba(9,17,31,0.1)]">
-                <Image src={assets.company.who} alt="Equipo técnico de Quality Techno Services" fill className="object-cover" />
+                <Image src={assets.company.value} alt="Equipo técnico de Quality Techno Services" fill className="object-cover" />
               </div>
             </Reveal>
             <Reveal delay={0.08}>
@@ -135,34 +132,26 @@ export default function CompanyPage() {
 
       <section className="bg-[var(--qts-ink-soft)] py-24">
         <Container>
-          <div className="overflow-hidden rounded-[40px] border border-[rgba(30,36,48,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,249,252,0.96))] px-8 py-10 shadow-[0_26px_90px_rgba(9,17,31,0.08)] sm:px-10 lg:px-12 lg:py-12">
-            <div className="grid gap-10 xl:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] xl:items-start">
-              <Reveal>
-                <div className="max-w-xl xl:sticky xl:top-28">
-                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Valores</p>
-                  <h2 className="mt-4 max-w-lg text-balance text-4xl font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)] sm:text-[3.2rem]">
-                    Principios que guían nuestra forma de trabajar
-                  </h2>
-                  <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--qts-muted)]">
-                    Promovemos relaciones de largo plazo, criterio técnico y una ejecución consistente con el nivel de exigencia de nuestros clientes.
-                  </p>
-                </div>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Valores"
+              title="Principios que guían nuestra forma de trabajar"
+              description="Promovemos relaciones de largo plazo, criterio técnico y una ejecución consistente con el nivel de exigencia de nuestros clientes."
+              className="max-w-4xl"
+            />
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {companyPage.values.map((value, index) => (
+              <Reveal key={value.title} delay={index * 0.05}>
+                <article className="flex h-full flex-col rounded-[30px] border border-[rgba(30,36,48,0.08)] bg-white p-7 shadow-[0_18px_56px_rgba(9,17,31,0.06)]">
+                  <div className="inline-flex size-13 items-center justify-center rounded-[20px] bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
+                    <value.icon className="size-6" />
+                  </div>
+                  <h3 className="mt-5 text-[1.7rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--qts-ink)]">{value.title}</h3>
+                  <p className="mt-3 text-base leading-8 text-[var(--qts-muted)]">{value.description}</p>
+                </article>
               </Reveal>
-
-              <div className="grid gap-6 md:grid-cols-2">
-                {[featuredValue, ...remainingValues].map((value, index) => (
-                  <Reveal key={value.title} delay={index * 0.05}>
-                    <article className="flex h-full flex-col rounded-[30px] border border-[rgba(30,36,48,0.08)] bg-white p-7 shadow-[0_18px_56px_rgba(9,17,31,0.06)]">
-                      <div className="inline-flex size-13 items-center justify-center rounded-[20px] bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
-                        <value.icon className="size-6" />
-                      </div>
-                      <h3 className="mt-5 text-[1.95rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--qts-ink)]">{value.title}</h3>
-                      <p className="mt-3 text-base leading-8 text-[var(--qts-muted)]">{value.description}</p>
-                    </article>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -191,7 +180,7 @@ export default function CompanyPage() {
             </Reveal>
             <Reveal delay={0.1}>
               <div className="relative min-h-[480px] overflow-hidden rounded-[32px] border border-[var(--qts-line)] shadow-[0_22px_80px_rgba(9,17,31,0.1)]">
-                <Image src={assets.company.value} alt="Proceso consultivo de QTS" fill className="object-cover" />
+                <Image src={assets.company.hero} alt="Proceso consultivo de QTS" fill className="object-cover" />
               </div>
             </Reveal>
           </div>

@@ -14,8 +14,6 @@ export const metadata = {
   description: 'Portafolio de productos y soluciones de QTS para bombeo, protección, reparación y continuidad operativa.',
 };
 
-const featuredManufacturers = ['Unique Polymer Systems', 'AGI Industries', 'NOV'];
-
 const valueItems = [
   {
     title: 'Mejor alineación con la aplicación',
@@ -40,10 +38,6 @@ const valueItems = [
 ] as const;
 
 export default function ProductsPage() {
-  const productLogos = featuredManufacturers
-    .map((name) => manufacturerLogos.find((logo) => logo.name === name))
-    .filter((logo): logo is NonNullable<typeof logo> => Boolean(logo));
-
   return (
     <>
       <PageHero
@@ -52,6 +46,8 @@ export default function ProductsPage() {
         description={productsPage.hero.description}
         image={productsPage.hero.image}
         ctas={[{ label: 'Solicitar información', href: '/contacto#formulario' }, { label: 'Contactar a QTS', href: '/contacto#formulario' }]}
+        imageOpacityClassName="opacity-78"
+        overlayClassName="bg-[linear-gradient(120deg,rgba(14,24,44,0.78)_0%,rgba(18,31,54,0.68)_42%,rgba(26,42,67,0.34)_100%)]"
       />
 
       <section className="bg-white py-24">
@@ -201,32 +197,24 @@ export default function ProductsPage() {
 
       <section className="bg-[var(--qts-navy)] py-24 text-white">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-            <Reveal>
-              <div>
-                <SectionHeading
-                  eyebrow="Alianzas estratégicas"
-                  title="Soluciones respaldadas por tecnología, experiencia y alianzas estratégicas"
-                  description="Nuestro portafolio se fortalece con fabricantes y soluciones de nivel internacional, lo que permite conectar cada requerimiento con alternativas confiables y orientadas a aplicaciones de alta exigencia."
-                  light
-                />
-                <div className="mt-8 grid max-w-3xl gap-4 sm:grid-cols-3">
-                  {productLogos.map((logo, index) => (
-                    <Reveal key={logo.name} delay={index * 0.05}>
-                      <div className="flex min-h-24 items-center justify-center rounded-[22px] border border-white/12 bg-white/6 px-6 py-5 backdrop-blur-sm">
-                        <Image src={logo.src} alt={logo.name} width={170} height={54} className="h-8 w-auto object-contain opacity-95" />
-                      </div>
-                    </Reveal>
-                  ))}
+          <Reveal>
+            <SectionHeading
+              eyebrow="Alianzas estratégicas"
+              title="Soluciones respaldadas por tecnología, experiencia y alianzas estratégicas"
+              description="Nuestro portafolio se fortalece con fabricantes y soluciones de nivel internacional, lo que permite conectar cada requerimiento con alternativas confiables y orientadas a aplicaciones de alta exigencia."
+              align="center"
+              light
+              className="mx-auto max-w-4xl"
+            />
+          </Reveal>
+          <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-3">
+            {manufacturerLogos.map((logo, index) => (
+              <Reveal key={logo.name} delay={index * 0.05}>
+                <div className="flex min-h-24 items-center justify-center rounded-[22px] border border-white/12 bg-white/6 px-6 py-5 backdrop-blur-sm">
+                  <Image src={logo.src} alt={logo.name} width={180} height={56} className="h-9 w-auto object-contain opacity-95" />
                 </div>
-              </div>
-            </Reveal>
-            <Reveal delay={0.08}>
-              <div className="relative min-h-[420px] overflow-hidden rounded-[32px] border border-white/10">
-                <Image src={assets.products.alliances} alt="Alianzas estratégicas" fill className="object-cover" />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,43,0.14),rgba(15,24,43,0.72))]" />
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>

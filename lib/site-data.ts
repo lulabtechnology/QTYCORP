@@ -65,11 +65,9 @@ export const navLinks = [
 
 export const manufacturerLogos = [
   { name: 'Unique Polymer Systems', src: assets.manufacturers.unique },
-  { name: 'NOV', src: assets.manufacturers.nov },
   { name: 'AGI Industries', src: assets.manufacturers.agi },
-  { name: 'Gorman-Rupp', src: assets.manufacturers.gorman },
-  { name: 'LCountries', src: assets.manufacturers.lcountries },
-];
+  { name: 'NOV', src: assets.manufacturers.nov },
+] as const;
 
 export const homeHero = {
   eyebrow: 'Representación técnica · suministro especializado · soporte industrial',
@@ -280,7 +278,7 @@ export const companyPage = {
       title: 'Atención personalizada',
       description: 'Relación directa y seguimiento orientado a resultados.',
       icon: Sparkles,
-      image: assets.company.who,
+      image: assets.company.presence,
     },
   ],
   missionTitle: 'Brindar soluciones industriales especializadas',
