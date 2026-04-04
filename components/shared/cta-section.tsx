@@ -21,11 +21,11 @@ export function CtaSection({
       <div className="absolute inset-0">
         <Image src={background} alt="Fondo industrial" fill className="object-cover object-center" />
       </div>
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(10,20,38,0.24),rgba(21,37,61,0.12),rgba(255,255,255,0.03))]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.14),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(244,122,32,0.06),transparent_28%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(10,20,38,0.18),rgba(21,37,61,0.1),rgba(255,255,255,0.03))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.1),transparent_34%),radial-gradient(circle_at_bottom_left,rgba(244,122,32,0.04),transparent_28%)]" />
       <Container className="relative z-10">
         <Reveal>
-          <div className="rounded-[32px] border border-white/16 bg-[linear-gradient(135deg,rgba(18,30,52,0.38),rgba(37,52,80,0.18))] px-8 py-10 text-white shadow-[0_28px_80px_rgba(2,10,26,0.16)] backdrop-blur-[12px] sm:px-12 sm:py-14">
+          <div className="rounded-[32px] border border-white/16 bg-[linear-gradient(135deg,rgba(18,30,52,0.28),rgba(37,52,80,0.12))] px-8 py-10 text-white shadow-[0_28px_80px_rgba(2,10,26,0.14)] backdrop-blur-[10px] sm:px-12 sm:py-14">
             <div className="max-w-3xl">
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] text-white/68">Asesoría técnica</p>
               <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">{title}</h2>

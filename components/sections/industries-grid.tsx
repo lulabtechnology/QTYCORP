@@ -23,14 +23,14 @@ export function IndustriesGrid({ dark = false }: { dark?: boolean }) {
                 <article
                   className={
                     dark
-                      ? 'overflow-hidden rounded-[26px] border border-white/10 bg-[var(--qts-navy-soft)] text-white shadow-[0_18px_60px_rgba(5,12,24,0.14)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(5,12,24,0.22)]'
-                      : 'overflow-hidden rounded-[26px] border border-[var(--qts-line)] bg-white shadow-[0_18px_60px_rgba(5,12,24,0.08)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(5,12,24,0.14)]'
+                      ? 'flex h-full flex-col overflow-hidden rounded-[26px] border border-white/10 bg-[var(--qts-navy-soft)] text-white shadow-[0_18px_60px_rgba(5,12,24,0.14)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(5,12,24,0.22)]'
+                      : 'flex h-full flex-col overflow-hidden rounded-[26px] border border-[var(--qts-line)] bg-white shadow-[0_18px_60px_rgba(5,12,24,0.08)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(5,12,24,0.14)]'
                   }
                 >
                   <div className="relative h-72 overflow-hidden">
                     <Image src={industry.src} alt={industry.title} fill className="object-cover transition duration-700 hover:scale-105" />
                   </div>
-                  <div className="flex min-h-[92px] items-center gap-4 p-5">
+                  <div className="flex min-h-[120px] flex-1 items-center gap-4 p-5 sm:min-h-[132px]">
                     <div
                       className={
                         dark
@@ -40,7 +40,7 @@ export function IndustriesGrid({ dark = false }: { dark?: boolean }) {
                     >
                       <Icon className="size-5" />
                     </div>
-                    <h3 className="text-xl font-semibold tracking-[-0.03em]">{industry.title}</h3>
+                    <h3 className="text-xl font-semibold leading-snug tracking-[-0.03em]">{industry.title}</h3>
                   </div>
                 </article>
               </Reveal>

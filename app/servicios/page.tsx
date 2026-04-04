@@ -1,5 +1,16 @@
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import {
+  ClipboardCheck,
+  Globe,
+  HardHat,
+  Layers3,
+  LifeBuoy,
+  SearchCheck,
+  ShieldCheck,
+  TriangleAlert,
+  Users,
+  Wrench,
+} from 'lucide-react';
 import { IndustriesGrid } from '@/components/sections/industries-grid';
 import { CtaSection } from '@/components/shared/cta-section';
 import { Container } from '@/components/shared/container';
@@ -14,26 +25,70 @@ export const metadata = {
   description: 'Servicios industriales especializados de QTS para confiabilidad, seguridad, protección de activos y continuidad operativa.',
 };
 
-const processCards = [
+const featuredHighlights = [
+  { title: 'Soporte técnico para aplicaciones críticas', icon: ShieldCheck },
+  { title: 'Servicios industriales de alto riesgo', icon: TriangleAlert },
+  { title: 'Reparación y recuperación industrial', icon: Wrench },
+  { title: 'Protección de superficies y activos', icon: Layers3 },
+  { title: 'Atención a necesidades operativas en campo', icon: LifeBuoy },
+] as const;
+
+const valueSupportItems = [
+  { title: 'Evaluación más clara de requerimientos', icon: SearchCheck },
+  { title: 'Mayor confianza en la toma de decisiones', icon: ShieldCheck },
+  { title: 'Cumplimiento normativo y seguridad operativa', icon: HardHat },
+  { title: 'Respuesta técnica cercana y consultiva', icon: LifeBuoy },
+  { title: 'Integración eficiente entre producto y servicio', icon: Layers3 },
+] as const;
+
+const processTimeline = [
   {
     number: '01',
-    title: 'Entendemos la necesidad',
-    description: 'Escuchamos el requerimiento, las condiciones de operación y los objetivos del cliente.',
+    title: 'Comprendemos el contexto operativo y el riesgo asociado',
+    description: 'Analizamos el entorno, variables críticas y posibles fallas.',
   },
   {
     number: '02',
-    title: 'Evaluamos la aplicación',
-    description: 'Analizamos el contexto técnico, operativo y económico para identificar la mejor alternativa.',
+    title: 'Evaluamos la aplicación y sus variables críticas',
+    description: 'Identificamos puntos de riesgo, opciones técnicas y costos.',
   },
   {
     number: '03',
-    title: 'Proponemos la solución',
-    description: 'Presentamos una recomendación clara, viable y alineada con la necesidad real de la operación.',
+    title: 'Definimos soluciones técnicas alineadas a desempeño y seguridad',
+    description: 'Proponemos alternativas viables, evaluamos y planificamos ejecución.',
   },
   {
     number: '04',
-    title: 'Acompañamos la implementación',
-    description: 'Damos seguimiento técnico y comercial para facilitar una ejecución confiable y efectiva.',
+    title: 'Ejecutamos y damos seguimiento',
+    description: 'Intervenimos y supervisamos para asegurar resultados y continuidad.',
+  },
+] as const;
+
+const serviceDifferentials = [
+  {
+    title: 'Respaldo técnico-comercial sólido',
+    description: 'Experiencia consultiva y operativa, con alto nivel técnico en cada proyecto.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Personal y metodologías certificadas',
+    description: 'Equipo calificado y procesos documentados bajo estándares de seguridad.',
+    icon: ClipboardCheck,
+  },
+  {
+    title: 'Enfoque consultivo orientado a solución',
+    description: 'Abordamos cada proyecto con atención personalizada y diagnóstico preciso.',
+    icon: SearchCheck,
+  },
+  {
+    title: 'Atención personalizada y cercana',
+    description: 'Priorizamos comunicación directa y soporte en sitio adaptado a cada cliente.',
+    icon: Users,
+  },
+  {
+    title: 'Cobertura y visión regional',
+    description: 'Conocemos el contexto local y respondemos con eficiencia en el campo.',
+    icon: Globe,
   },
 ] as const;
 
@@ -102,11 +157,11 @@ export default function ServicesPage() {
           <div className="mt-12 grid gap-6 xl:grid-cols-3">
             {featuredServiceCards.map((service, index) => (
               <Reveal key={service.title} delay={index * 0.05}>
-                <article className="h-full overflow-hidden rounded-[30px] border border-[var(--qts-line)] bg-white shadow-[0_18px_52px_rgba(9,17,31,0.08)]">
+                <article className="flex h-full flex-col overflow-hidden rounded-[30px] border border-[var(--qts-line)] bg-white shadow-[0_18px_52px_rgba(9,17,31,0.08)]">
                   <div className="relative aspect-[16/7] overflow-hidden">
                     <Image src={service.src} alt={service.title} fill className="object-cover" />
                   </div>
-                  <div className="p-7">
+                  <div className="flex flex-1 flex-col p-7">
                     <h3 className="text-[1.95rem] font-semibold leading-tight tracking-[-0.035em] text-[var(--qts-ink)]">{service.title}</h3>
                     <p className="mt-4 text-base leading-8 text-[var(--qts-muted)]">{service.description}</p>
                   </div>
@@ -119,10 +174,15 @@ export default function ServicesPage() {
 
       <section className="bg-white py-24">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <Reveal>
-              <div className="relative min-h-[460px] overflow-hidden rounded-[32px] border border-[var(--qts-line)] shadow-[0_20px_70px_rgba(9,17,31,0.1)]">
-                <Image src={assets.services.featured} alt="Capacidades destacadas de servicio" fill className="object-cover" />
+              <div className="relative min-h-[640px] overflow-hidden rounded-[34px] border border-[var(--qts-line)] shadow-[0_22px_72px_rgba(9,17,31,0.1)]">
+                <Image
+                  src={assets.home.industries.energia}
+                  alt="Capacidades de servicio enfocadas en seguridad y continuidad operativa"
+                  fill
+                  className="object-cover object-center"
+                />
               </div>
             </Reveal>
             <Reveal delay={0.08}>
@@ -132,12 +192,20 @@ export default function ServicesPage() {
                   title="Capacidades orientadas a seguridad, desempeño y continuidad operativa"
                   description="Un enfoque que combina acompañamiento técnico, ejecución especializada y control documentado para aplicaciones de alta exigencia."
                 />
-                <div className="mt-8 grid gap-3">
-                  {servicesPage.highlights.map((item, index) => (
-                    <Reveal key={item} delay={index * 0.05}>
-                      <div className="rounded-[22px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] px-5 py-4 text-sm font-semibold text-[var(--qts-ink)]">{item}</div>
-                    </Reveal>
-                  ))}
+                <div className="mt-8 grid gap-4">
+                  {featuredHighlights.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <Reveal key={item.title} delay={index * 0.05}>
+                        <div className="flex items-center gap-4 rounded-[24px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] px-6 py-5 shadow-[0_12px_34px_rgba(9,17,31,0.04)]">
+                          <span className="inline-flex size-16 shrink-0 items-center justify-center rounded-[22px] bg-[rgba(244,122,32,0.12)] text-[var(--qts-accent)]">
+                            <Icon className="size-8" />
+                          </span>
+                          <p className="text-[1.15rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--qts-ink)] sm:text-[1.35rem]">{item.title}</p>
+                        </div>
+                      </Reveal>
+                    );
+                  })}
                 </div>
               </div>
             </Reveal>
@@ -145,32 +213,43 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <section className="bg-[var(--qts-navy)] py-24 text-white">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+      <section className="relative overflow-hidden bg-[var(--qts-navy)] py-24 text-white">
+        <div className="absolute inset-y-0 right-0 hidden w-[48%] lg:block">
+          <Image src={assets.services.hero} alt="Soporte técnico y servicios industriales" fill className="object-cover object-[72%_center]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,24,43,0.85)_0%,rgba(15,24,43,0.28)_46%,rgba(15,24,43,0.16)_100%)]" />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,24,43,0.88)_0%,rgba(15,24,43,0.78)_38%,rgba(15,24,43,0.54)_60%,rgba(15,24,43,0.18)_100%)] lg:hidden" />
+        <Container className="relative z-10">
+          <div className="grid gap-12 lg:grid-cols-[1fr_0.92fr] lg:items-center">
             <Reveal>
-              <div>
+              <div className="max-w-2xl">
                 <SectionHeading
                   eyebrow="Cómo agregamos valor"
-                  title="Servicios que respaldan mejores decisiones operativas"
-                  description={servicesPage.valueBody}
+                  title="Soporte técnico y servicios que reducen riesgo y mejoran el desempeño operativo"
+                  description="Ayudamos a nuestros clientes a reducir incertidumbre, optimizar la selección de soluciones y ejecutar con mayor seguridad en aplicaciones críticas, donde el desempeño del activo y la continuidad operativa son clave."
                   light
                 />
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {servicesPage.valueBullets.map((item, index) => (
-                    <Reveal key={item} delay={index * 0.05}>
-                      <div className="rounded-[22px] border border-white/10 bg-white/6 px-5 py-4 text-sm font-semibold text-white/86">{item}</div>
-                    </Reveal>
-                  ))}
+                <div className="mt-10 space-y-4">
+                  {valueSupportItems.map((item, index) => {
+                    const Icon = item.icon;
+                    return (
+                      <Reveal key={item.title} delay={index * 0.05}>
+                        <div className="flex items-center gap-4 rounded-[24px] border border-white/14 bg-white/8 px-5 py-4 shadow-[0_18px_40px_rgba(3,9,20,0.14)] backdrop-blur-[8px]">
+                          <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-full bg-[var(--qts-accent)]/16 text-[var(--qts-accent)]">
+                            <Icon className="size-5" />
+                          </span>
+                          <p className="text-[1.1rem] font-semibold tracking-[-0.02em] text-white/92">{item.title}</p>
+                        </div>
+                      </Reveal>
+                    );
+                  })}
                 </div>
               </div>
             </Reveal>
-            <Reveal delay={0.08}>
-              <div className="relative min-h-[430px] overflow-hidden rounded-[32px] border border-white/10">
-                <Image src={assets.services.approach} alt="Enfoque de trabajo de QTS" fill className="object-cover" />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,43,0.16),rgba(15,24,43,0.74))]" />
-              </div>
-            </Reveal>
+            <div className="relative min-h-[520px] overflow-hidden rounded-[34px] border border-white/12 lg:hidden">
+              <Image src={assets.services.hero} alt="Equipo de QTS en planta industrial" fill className="object-cover object-[72%_center]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,24,43,0.08),rgba(15,24,43,0.2))]" />
+            </div>
           </div>
         </Container>
       </section>
@@ -179,41 +258,66 @@ export default function ServicesPage() {
 
       <section className="bg-[var(--qts-ink-soft)] py-24">
         <Container>
-          <div className="grid gap-14 xl:grid-cols-[1.05fr_0.95fr] xl:items-start">
+          <div className="grid gap-8 xl:grid-cols-2 xl:items-start">
             <Reveal>
-              <div>
-                <SectionHeading
-                  eyebrow="Cómo trabajamos"
-                  title="Cómo trabajamos para generar valor en cada aplicación"
-                  description="Combinamos visión técnica, criterio comercial y acompañamiento cercano para entender cada requerimiento, evaluar la aplicación correcta y proponer soluciones alineadas con los objetivos operativos del cliente."
-                />
-                <div className="mt-10 grid gap-5 sm:grid-cols-2">
-                  {processCards.map((step, index) => (
-                    <Reveal key={step.number} delay={index * 0.05}>
-                      <article className="relative h-full rounded-[30px] border border-[rgba(30,36,48,0.08)] bg-white p-7 shadow-[0_20px_60px_rgba(9,17,31,0.06)]">
-                        <div className="flex items-start gap-4">
-                          <span className="inline-flex size-14 shrink-0 items-center justify-center rounded-full bg-[var(--qts-accent)] text-xl font-semibold text-white shadow-[0_16px_34px_rgba(244,122,32,0.24)]">
-                            {step.number}
-                          </span>
-                          <div>
-                            <h3 className="text-[1.95rem] font-semibold leading-[1.02] tracking-[-0.04em] text-[var(--qts-ink)]">{step.title}</h3>
-                            <p className="mt-4 text-base leading-8 text-[var(--qts-muted)]">{step.description}</p>
-                          </div>
-                        </div>
-                        {index % 2 === 0 ? (
-                          <ArrowRight className="pointer-events-none absolute -right-4 top-1/2 hidden size-8 -translate-y-1/2 text-[var(--qts-accent)]/85 sm:block xl:size-9" />
-                        ) : null}
-                      </article>
-                    </Reveal>
+              <article className="overflow-hidden rounded-[34px] border border-[var(--qts-line)] bg-white shadow-[0_26px_84px_rgba(9,17,31,0.08)]">
+                <div className="px-8 pt-8 sm:px-10 sm:pt-10">
+                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Enfoque de trabajo</p>
+                  <h2 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.04em] text-[var(--qts-ink)] sm:text-4xl">
+                    Cómo trabajamos para reducir riesgo y asegurar resultados en campo
+                  </h2>
+                  <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--qts-muted)] sm:text-lg">
+                    Analizamos cada aplicación desde el contexto operativo real del cliente, identificando riesgos, variables críticas y alternativas técnicas viables antes de ejecutar cualquier solución.
+                  </p>
+                </div>
+                <div className="relative mt-8 aspect-[16/8] overflow-hidden border-y border-[var(--qts-line)]">
+                  <Image src={assets.home.solutions.services} alt="Equipo técnico evaluando una aplicación industrial" fill className="object-cover" />
+                </div>
+                <div className="space-y-6 px-8 py-8 sm:px-10 sm:py-10">
+                  {processTimeline.map((step, index) => (
+                    <div key={step.number} className="flex gap-4">
+                      <div className="flex w-12 shrink-0 flex-col items-center">
+                        <span className="inline-flex size-12 items-center justify-center rounded-full bg-[var(--qts-accent)] text-base font-semibold text-white shadow-[0_14px_30px_rgba(244,122,32,0.22)]">
+                          {step.number}
+                        </span>
+                        {index !== processTimeline.length - 1 ? <span className="mt-2 h-full w-px bg-[var(--qts-accent)]/30" /> : null}
+                      </div>
+                      <div className="pb-2">
+                        <h3 className="text-[1.35rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--qts-ink)]">{step.title}</h3>
+                        <p className="mt-2 text-base leading-7 text-[var(--qts-muted)]">{step.description}</p>
+                      </div>
+                    </div>
                   ))}
                 </div>
-              </div>
+              </article>
             </Reveal>
+
             <Reveal delay={0.08}>
-              <div className="relative min-h-[760px] overflow-hidden rounded-[36px] border border-[rgba(30,36,48,0.08)] bg-white shadow-[0_28px_90px_rgba(9,17,31,0.08)]">
-                <Image src={assets.services.approach} alt="Proceso de evaluación técnica y comercial de QTS" fill className="object-cover object-center" />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.14))]" />
-              </div>
+              <article className="rounded-[34px] border border-[var(--qts-line)] bg-white px-8 py-8 shadow-[0_26px_84px_rgba(9,17,31,0.08)] sm:px-10 sm:py-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Diferencial de servicio</p>
+                <h2 className="mt-4 text-balance text-3xl font-semibold tracking-[-0.04em] text-[var(--qts-ink)] sm:text-4xl">
+                  Por qué QTS es un aliado técnico confiable para aplicaciones críticas
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--qts-muted)] sm:text-lg">
+                  Combinamos respaldo técnico-comercial, experiencia en campo y metodologías especializadas para ejecutar con seguridad y cumplimiento en entornos exigentes.
+                </p>
+                <div className="mt-8 divide-y divide-[var(--qts-line)]">
+                  {serviceDifferentials.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <div key={item.title} className="flex gap-4 py-5 first:pt-0 last:pb-0">
+                        <span className="inline-flex size-14 shrink-0 items-center justify-center rounded-[20px] bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
+                          <Icon className="size-7" />
+                        </span>
+                        <div>
+                          <h3 className="text-[1.28rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--qts-ink)]">{item.title}</h3>
+                          <p className="mt-2 text-base leading-7 text-[var(--qts-muted)]">{item.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </article>
             </Reveal>
           </div>
         </Container>
