@@ -53,6 +53,19 @@ export const assets = {
     needs: '/images/products/necesidades-operativas.jpg',
     alliances: '/images/products/alianzas.jpg',
     portfolio: '/images/products/portafolio.jpg',
+    cards: {
+      pumping: '/images/products/cards/pumping.jpg',
+      accessories: '/images/products/cards/accessories.jpg',
+      polymers: '/images/products/cards/polymers.jpg',
+      coatings: '/images/products/cards/coatings.jpg',
+      repair: '/images/products/cards/repair.jpg',
+      engineering: '/images/products/cards/engineering.jpg',
+    },
+    approach: {
+      analysis: '/images/products/approach/analysis.jpg',
+      criticality: '/images/products/approach/criticality.jpg',
+      continuity: '/images/products/approach/continuity.jpg',
+    },
   },
   resources: {
     hero: '/images/resources/hero-resources.jpg',

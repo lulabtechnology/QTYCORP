@@ -433,49 +433,75 @@ export const productsPage = {
     'En Quality Techno Services conectamos a nuestros clientes con productos y soluciones respaldados por tecnologías de amplia trayectoria en la industria. Nuestro portafolio está orientado a aplicaciones donde la confiabilidad del activo, la seguridad operativa y el soporte técnico-comercial son factores determinantes.',
   intro2:
     'Trabajamos con un enfoque consultivo para ayudar a identificar la alternativa más adecuada según las condiciones de servicio, el tipo de proceso, la criticidad del equipo y los objetivos operativos de cada cliente.',
+  categoriesHeading: {
+    title: 'Soluciones industriales y acompañamiento técnico para aplicaciones críticas',
+    description:
+      'Más que un portafolio de productos: ayudamos a evaluar la aplicación, seleccionar la solución adecuada y respaldar la operación antes, durante y después de la compra.',
+  },
   categories: [
     {
       title: 'Sistemas de bombeo y manejo de fluidos',
-      description: 'Equipos y soluciones para transferencia, proceso, recirculación, drenaje, manejo de fluidos y operación continua.',
-      icon: Waves,
+      description:
+        'Bombas y soluciones para transferencia, proceso, drenaje, recirculación y operación continua en servicios críticos.',
+      src: assets.products.cards.pumping,
+    },
+    {
+      title: 'Accesorios y productos relacionados',
+      description:
+        'Sellos mecánicos, válvulas, agitadores y mezcladores, trituradores, intercambiadores de calor y más.',
+      src: assets.products.cards.accessories,
     },
     {
       title: 'Polímeros y compuestos avanzados',
-      description: 'Tecnologías especializadas para reparación, reconstrucción, protección y prolongación de vida útil de activos.',
-      icon: FlaskConical,
+      description:
+        'Materiales de ingeniería para reparación, reconstrucción, protección y extensión de vida útil de activos.',
+      src: assets.products.cards.polymers,
     },
     {
       title: 'Recubrimientos y protección industrial',
-      description: 'Sistemas orientados a proteger superficies, estructuras, componentes y equipos frente a condiciones agresivas.',
-      icon: Shield,
+      description:
+        'Sistemas para proteger superficies, estructuras y componentes frente a corrosión, abrasión, erosión y ataque químico.',
+      src: assets.products.cards.coatings,
     },
     {
-      title: 'Soluciones para reparación y recuperación de activos',
-      description: 'Productos diseñados para recuperar funcionalidad, restablecer integridad y apoyar la continuidad operativa.',
-      icon: Wrench,
+      title: 'Reparación y recuperación de activos',
+      description:
+        'Soluciones para restablecer integridad, recuperar funcionalidad y reducir tiempos de parada en equipos críticos.',
+      src: assets.products.cards.repair,
     },
     {
-      title: 'Soluciones complementarias especializadas',
-      description: 'Tecnologías, materiales y configuraciones para requerimientos específicos de planta, infraestructura y mantenimiento.',
-      icon: Layers3,
+      title: 'Ingeniería de aplicación y soporte postventa',
+      description:
+        'Acompañamiento en revisión técnica, selección de productos y equipos, coordinación con aftermarket especializado.',
+      src: assets.products.cards.engineering,
     },
   ],
-  operationalNeeds: [
+  evaluationSection: {
+    title: 'Productos y soluciones orientadas a resolver desafíos críticos de operación',
+    description:
+      'QTS estructura su portafolio desde la aplicación, la criticidad del activo y la continuidad de la operación; no desde una lógica de catálogo plano. Analizamos las condiciones específicas del proceso, entorno y riesgo operativo para recomendar soluciones efectivas que realmente impacten la productividad y disponibilidad de los activos en campo.',
+  },
+  evaluationCards: [
     {
-      title: 'Transferencia y manejo de fluidos',
-      description: 'Soluciones para procesos donde el movimiento confiable del fluido es crítico para la operación.',
+      title: 'Análisis de la Aplicación',
+      description:
+        'Evaluamos las demandas del proceso y los modos de falla para definir la solución más adecuada.',
+      bullets: ['Condiciones reales de operación', 'Modos de falla del equipo'],
+      src: assets.products.approach.analysis,
     },
     {
-      title: 'Protección contra corrosión, erosión y abrasión',
-      description: 'Tecnologías para reducir el impacto del desgaste continuo, ambientes agresivos y exposición química.',
+      title: 'Criticidad del Activo',
+      description:
+        'Determinamos cómo la falla afecta la disponibilidad y los costos operativos del sistema.',
+      bullets: ['Impacto en la producción', 'Costo por parada no programada'],
+      src: assets.products.approach.criticality,
     },
     {
-      title: 'Reparación de componentes y superficies',
-      description: 'Alternativas para recuperar integridad funcional, restablecer desempeño y extender la vida útil.',
-    },
-    {
-      title: 'Soporte a mantenimiento y continuidad operativa',
-      description: 'Productos diseñados para integrarse a estrategias de mantenimiento, protección de activos y mejora del desempeño operativo.',
+      title: 'Continuidad Operativa',
+      description:
+        'Garantizamos la confiabilidad y el soporte técnico para minimizar tiempos de inactividad.',
+      bullets: ['Disponibilidad y repuestos críticos', 'Soporte y mantenimiento especializado'],
+      src: assets.products.approach.continuity,
     },
   ],
   valueBody:
