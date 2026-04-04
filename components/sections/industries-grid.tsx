@@ -19,14 +19,25 @@ export function IndustriesGrid({ dark = false }: { dark?: boolean }) {
           {industries.map((industry, index) => {
             const Icon = industry.icon;
             return (
-              <Reveal key={industry.title} delay={index * 0.05}>
-                <article className={dark ? 'overflow-hidden rounded-[26px] border border-white/10 bg-[var(--qts-navy-soft)] text-white shadow-[0_18px_60px_rgba(5,12,24,0.14)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(5,12,24,0.22)]' : 'overflow-hidden rounded-[26px] border border-[var(--qts-line)] bg-white shadow-[0_18px_60px_rgba(5,12,24,0.08)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(5,12,24,0.14)]'}>
-                  <div className="relative h-72">
-                    <Image src={industry.src} alt={industry.title} fill className="object-cover" />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,20,37,0.08)_0%,rgba(12,20,37,0.18)_100%)]" />
+              <Reveal key={industry.title} delay={index * 0.05} className="h-full">
+                <article
+                  className={
+                    dark
+                      ? 'overflow-hidden rounded-[26px] border border-white/10 bg-[var(--qts-navy-soft)] text-white shadow-[0_18px_60px_rgba(5,12,24,0.14)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(5,12,24,0.22)]'
+                      : 'overflow-hidden rounded-[26px] border border-[var(--qts-line)] bg-white shadow-[0_18px_60px_rgba(5,12,24,0.08)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(5,12,24,0.14)]'
+                  }
+                >
+                  <div className="relative h-72 overflow-hidden">
+                    <Image src={industry.src} alt={industry.title} fill className="object-cover transition duration-700 hover:scale-105" />
                   </div>
-                  <div className="flex items-center gap-4 p-5">
-                    <div className={dark ? 'inline-flex size-11 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/10 text-white' : 'inline-flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]'}>
+                  <div className="flex min-h-[92px] items-center gap-4 p-5">
+                    <div
+                      className={
+                        dark
+                          ? 'inline-flex size-11 shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/10 text-white'
+                          : 'inline-flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]'
+                      }
+                    >
                       <Icon className="size-5" />
                     </div>
                     <h3 className="text-xl font-semibold tracking-[-0.03em]">{industry.title}</h3>

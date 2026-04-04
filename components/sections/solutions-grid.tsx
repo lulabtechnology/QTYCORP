@@ -12,14 +12,13 @@ export function SolutionsGrid() {
       <Container>
         <Reveal>
           <SectionHeading
-            eyebrow="Soluciones principales"
             title="Soluciones diseñadas para continuidad operativa, confiabilidad y protección de activos"
             description="Nuestro portafolio integra productos, tecnologías y servicios orientados a resolver desafíos industriales con un enfoque práctico, técnico y comercial."
           />
         </Reveal>
         <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-3">
           {solutionCards.map((card, index) => (
-            <Reveal key={card.title} delay={index * 0.08}>
+            <Reveal key={card.title} delay={index * 0.08} className="h-full">
               <Link
                 href={card.href}
                 className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-[var(--qts-line)] bg-white shadow-[0_20px_70px_rgba(9,17,31,0.08)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_90px_rgba(9,17,31,0.12)]"
