@@ -58,6 +58,9 @@ export const assets = {
     hero: '/images/resources/hero-resources.jpg',
     catalogs: '/images/resources/catalogos.jpg',
     request: '/images/resources/solicitud-informacion.jpg',
+    videos: {
+      repairExample1: '/videos/resources/reparacion-ejemplo-1.mp4',
+    },
   },
   contact: {
     hero: '/images/contact/hero-contact.jpg',
