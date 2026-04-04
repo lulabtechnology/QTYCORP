@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { PageHero } from '@/components/shared/page-hero';
+import { ButtonLink } from '@/components/shared/button-link';
 import { Container } from '@/components/shared/container';
 import { Reveal } from '@/components/shared/reveal';
 import { SectionHeading } from '@/components/shared/section-heading';
@@ -13,9 +13,38 @@ export const metadata = {
 };
 
 export default function CompanyPage() {
+  const featuredValue = companyPage.values.find((value) => value.title === 'Integridad') ?? companyPage.values[0];
+  const remainingValues = companyPage.values.filter((value) => value.title !== featuredValue.title);
+
   return (
     <>
-      <PageHero eyebrow="La empresa" {...companyPage.hero} />
+      <section className="relative overflow-hidden bg-[var(--qts-navy)] pt-30 text-white">
+        <div className="absolute inset-0 opacity-72">
+          <Image src={companyPage.hero.image} alt="Fondo industrial de QTS" fill className="object-cover object-center" priority />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(118deg,rgba(14,24,44,0.8)_0%,rgba(18,31,54,0.66)_42%,rgba(26,42,67,0.32)_100%)]" />
+        <Container className="relative z-10 py-24 sm:py-28">
+          <div className="max-w-4xl">
+            <h1 className="max-w-3xl text-balance text-4xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-[3.65rem]">
+              {companyPage.hero.title}
+            </h1>
+            <p className="mt-6 max-w-3xl text-[1.15rem] leading-8 text-white/88 sm:text-[1.24rem]">
+              {companyPage.hero.description}
+            </p>
+            <p className="mt-5 max-w-3xl text-base leading-8 text-white/72">{companyPage.hero.body}</p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <ButtonLink href={companyPage.hero.ctas[0].href} icon>
+                {companyPage.hero.ctas[0].label}
+              </ButtonLink>
+              {companyPage.hero.ctas[1] ? (
+                <ButtonLink href={companyPage.hero.ctas[1].href} variant="secondary">
+                  {companyPage.hero.ctas[1].label}
+                </ButtonLink>
+              ) : null}
+            </div>
+          </div>
+        </Container>
+      </section>
 
       <section className="bg-white py-24">
         <Container>
@@ -49,39 +78,55 @@ export default function CompanyPage() {
             />
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {companyPage.valueProps.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Reveal key={item.title} delay={index * 0.07}>
-                  <div className="rounded-[28px] border border-[var(--qts-line)] bg-white p-6 shadow-[0_20px_70px_rgba(9,17,31,0.08)]">
-                    <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
-                      <Icon className="size-5" />
-                    </div>
-                    <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em] text-[var(--qts-ink)]">{item.title}</h3>
+            {companyPage.valueProps.map((item, index) => (
+              <Reveal key={item.title} delay={index * 0.07}>
+                <article className="flex h-full flex-col overflow-hidden rounded-[30px] border border-[var(--qts-line)] bg-white shadow-[0_20px_70px_rgba(9,17,31,0.08)]">
+                  <div className="relative aspect-[16/8.8] overflow-hidden">
+                    <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,31,51,0.02),rgba(20,31,51,0.18))]" />
+                  </div>
+                  <div className="flex flex-1 flex-col px-6 py-6">
+                    <h3 className="text-[1.35rem] font-semibold leading-tight tracking-[-0.03em] text-[var(--qts-ink)]">{item.title}</h3>
                     <p className="mt-3 text-sm leading-7 text-[var(--qts-muted)]">{item.description}</p>
                   </div>
-                </Reveal>
-              );
-            })}
+                </article>
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>
 
       <section className="bg-white py-24">
         <Container>
-          <div className="grid gap-6 lg:grid-cols-2">
+          <div className="grid gap-10 xl:grid-cols-[1.02fr_0.98fr] xl:items-start">
             <Reveal>
-              <div className="rounded-[30px] border border-[var(--qts-line)] bg-[var(--qts-navy)] p-8 text-white">
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/55">Nuestra misión</p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em]">Brindar soluciones integrales y especializadas</h2>
-                <p className="mt-5 text-base leading-8 text-white/72">{companyPage.mission}</p>
+              <div className="relative min-h-[540px] overflow-hidden rounded-[34px] border border-[var(--qts-line)] shadow-[0_22px_80px_rgba(9,17,31,0.1)]">
+                <Image src={assets.company.who} alt="Equipo técnico de Quality Techno Services" fill className="object-cover" />
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="rounded-[30px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Nuestra visión</p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[var(--qts-ink)]">Un referente regional de alto desempeño</h2>
-                <p className="mt-5 text-base leading-8 text-[var(--qts-muted)]">{companyPage.vision}</p>
+              <div className="flex h-full flex-col justify-center gap-10 xl:pl-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Nuestra esencia</p>
+                </div>
+
+                <div className="border-b border-[var(--qts-line)] pb-9">
+                  <p className="text-[2rem] font-medium tracking-[-0.03em] text-[var(--qts-accent)]">Misión</p>
+                  <h2 className="mt-4 max-w-xl text-4xl font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)]">
+                    {companyPage.missionTitle}
+                  </h2>
+                  <p className="mt-5 text-lg font-medium text-[var(--qts-ink)]/84">{companyPage.missionSubtitle}</p>
+                  <p className="mt-5 max-w-xl text-base leading-8 text-[var(--qts-muted)]">{companyPage.mission}</p>
+                </div>
+
+                <div>
+                  <p className="text-[2rem] font-medium tracking-[-0.03em] text-[var(--qts-accent)]">Visión</p>
+                  <h2 className="mt-4 max-w-xl text-4xl font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)]">
+                    {companyPage.visionTitle}
+                  </h2>
+                  <p className="mt-5 text-lg font-medium text-[var(--qts-ink)]/84">{companyPage.visionSubtitle}</p>
+                  <p className="mt-5 max-w-xl text-base leading-8 text-[var(--qts-muted)]">{companyPage.vision}</p>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -90,22 +135,49 @@ export default function CompanyPage() {
 
       <section className="bg-[var(--qts-ink-soft)] py-24">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <Reveal>
-              <SectionHeading
-                eyebrow="Valores"
-                title="Principios que guían nuestra forma de trabajar"
-                description="Promovemos relaciones de largo plazo, criterio técnico y una ejecución consistente con el nivel de exigencia de nuestros clientes."
-              />
-            </Reveal>
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {companyPage.values.map((value, index) => (
-                <Reveal key={value} delay={index * 0.05}>
-                  <div className="rounded-[24px] border border-[var(--qts-line)] bg-white px-5 py-5 text-sm font-semibold text-[var(--qts-ink)] shadow-[0_12px_34px_rgba(9,17,31,0.05)]">
-                    {value}
+          <div className="overflow-hidden rounded-[40px] border border-[rgba(30,36,48,0.08)] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(247,249,252,0.96))] px-8 py-10 shadow-[0_26px_90px_rgba(9,17,31,0.08)] sm:px-10 lg:px-12 lg:py-12">
+            <div className="grid gap-8 lg:grid-cols-12 lg:items-start">
+              <Reveal>
+                <div className="lg:col-span-5 lg:pr-8">
+                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Valores</p>
+                  <h2 className="mt-4 max-w-lg text-balance text-4xl font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)] sm:text-[3.2rem]">
+                    Principios que guían nuestra forma de trabajar
+                  </h2>
+                  <p className="mt-6 max-w-xl text-lg leading-8 text-[var(--qts-muted)]">
+                    Promovemos relaciones de largo plazo, criterio técnico y una ejecución consistente con el nivel de exigencia de nuestros clientes.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal delay={0.05}>
+                <div className="lg:col-span-7 lg:pl-4">
+                  <div className="mx-auto h-full rounded-[30px] border border-[rgba(30,36,48,0.08)] bg-white p-7 shadow-[0_20px_60px_rgba(9,17,31,0.08)] lg:ml-auto lg:max-w-[430px]">
+                    <div className="flex items-start gap-5">
+                      <div className="inline-flex size-14 shrink-0 items-center justify-center rounded-[20px] bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
+                        <featuredValue.icon className="size-7" />
+                      </div>
+                      <div>
+                        <h3 className="text-3xl font-semibold tracking-[-0.03em] text-[var(--qts-ink)]">{featuredValue.title}</h3>
+                        <p className="mt-3 text-lg leading-8 text-[var(--qts-muted)]">{featuredValue.description}</p>
+                      </div>
+                    </div>
                   </div>
-                </Reveal>
-              ))}
+                </div>
+              </Reveal>
+
+              <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3 lg:col-span-12">
+                {remainingValues.map((value, index) => (
+                  <Reveal key={value.title} delay={index * 0.05}>
+                    <div className="h-full rounded-[28px] border border-[rgba(30,36,48,0.08)] bg-white p-7 shadow-[0_16px_44px_rgba(9,17,31,0.06)]">
+                      <div className="inline-flex size-12 items-center justify-center rounded-[18px] bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
+                        <value.icon className="size-6" />
+                      </div>
+                      <h3 className="mt-5 text-2xl font-semibold leading-tight tracking-[-0.03em] text-[var(--qts-ink)]">{value.title}</h3>
+                      <p className="mt-3 text-base leading-8 text-[var(--qts-muted)]">{value.description}</p>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
             </div>
           </div>
         </Container>
