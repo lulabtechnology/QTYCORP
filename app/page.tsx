@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import { ArrowRight, Download, FileText } from 'lucide-react';
 import { HeroVideo } from '@/components/layout/hero-video';
 import { ManufacturerStrip } from '@/components/sections/manufacturer-strip';
 import { TrustBlock } from '@/components/sections/trust-block';
@@ -7,14 +5,11 @@ import { SolutionsGrid } from '@/components/sections/solutions-grid';
 import { ProposalGrid } from '@/components/sections/proposal-grid';
 import { IndustriesGrid } from '@/components/sections/industries-grid';
 import { DifferentiatorsGrid } from '@/components/sections/differentiators-grid';
-import { ResourceForm } from '@/components/forms/resource-form';
 import { ButtonLink } from '@/components/shared/button-link';
 import { Container } from '@/components/shared/container';
 import { CtaSection } from '@/components/shared/cta-section';
 import { Reveal } from '@/components/shared/reveal';
-import { SectionHeading } from '@/components/shared/section-heading';
-import { assets } from '@/lib/asset-routes';
-import { homeHero, primaryCta, resourceCatalogs } from '@/lib/site-data';
+import { homeHero, primaryCta } from '@/lib/site-data';
 
 export default function HomePage() {
   return (
@@ -72,48 +67,6 @@ export default function HomePage() {
       <ProposalGrid />
       <IndustriesGrid dark />
       <DifferentiatorsGrid />
-
-      <section id="recursos" className="relative overflow-hidden bg-[var(--qts-navy-soft)] py-24 text-white">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
-            <div>
-              <Reveal>
-                <SectionHeading
-                  eyebrow="Centro de recursos"
-                  title="Material de referencia para una evaluación más clara"
-                  description="Compartimos catálogos y documentos de consulta general, mientras que la información técnica más específica se entrega de forma directa según el requerimiento del cliente."
-                  light
-                />
-              </Reveal>
-              <div className="mt-10 space-y-4">
-                {resourceCatalogs.map((catalog, index) => (
-                  <Reveal key={catalog.title} delay={index * 0.06}>
-                    <a
-                      href={catalog.href}
-                      className="group flex items-start gap-4 rounded-[24px] border border-white/12 bg-white/6 p-5 transition hover:border-white/22 hover:bg-white/8"
-                    >
-                      <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.14)] text-[var(--qts-accent)]">
-                        <FileText className="size-5" />
-                      </span>
-                      <span className="flex-1">
-                        <span className="block text-lg font-semibold tracking-[-0.02em]">{catalog.title}</span>
-                        <span className="mt-2 block text-sm leading-7 text-white/68">{catalog.description}</span>
-                      </span>
-                      <span className="inline-flex size-10 items-center justify-center rounded-full border border-white/12 text-white/70 transition group-hover:border-[var(--qts-accent)] group-hover:text-[var(--qts-accent)]">
-                        <Download className="size-4" />
-                      </span>
-                    </a>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-            <Reveal delay={0.12}>
-              <ResourceForm />
-            </Reveal>
-          </div>
-        </Container>
-      </section>
-
       <CtaSection {...primaryCta} />
     </>
   );

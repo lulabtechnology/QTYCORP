@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { assets } from '@/lib/asset-routes';
-import { footerLinks, manufacturerLogos, site } from '@/lib/site-data';
+import { footerLinks, site } from '@/lib/site-data';
 import { Container } from '@/components/shared/container';
 
 export function Footer() {
@@ -11,16 +11,11 @@ export function Footer() {
       <Container className="py-16">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_0.8fr_0.9fr]">
           <div>
-            <Image src={assets.brand.logoLight} alt="Quality Techno Services" width={186} height={52} className="h-10 w-auto" />
-            <p className="mt-5 max-w-xl text-sm leading-7 text-white/70">
-              {site.name} · Soluciones industriales, representación técnica y soporte especializado para activos y operaciones críticas.
-            </p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-              {manufacturerLogos.map((logo) => (
-                <div key={logo.name} className="rounded-2xl border border-white/10 bg-white/6 p-4 backdrop-blur-sm">
-                  <Image src={logo.src} alt={logo.name} width={140} height={42} className="h-6 w-auto opacity-90" />
-                </div>
-              ))}
+            <div className="flex max-w-xl flex-col items-start">
+              <Image src={assets.brand.logoLight} alt="Quality Techno Services" width={260} height={78} className="h-16 w-auto sm:h-20" />
+              <p className="mt-7 max-w-xl text-sm leading-7 text-white/70">
+                {site.name} · Soluciones industriales, representación técnica y soporte especializado para activos y operaciones críticas.
+              </p>
             </div>
           </div>
 
@@ -41,13 +36,26 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-[0.22em] text-white/58">Contacto</h3>
             <div className="mt-5 space-y-4 text-sm leading-7 text-white/74">
               <p>
-                Correo: <a className="text-white transition hover:text-[var(--qts-accent)]" href={`mailto:${site.email}`}>{site.email}</a>
+                Correo:{' '}
+                <a className="text-white transition hover:text-[var(--qts-accent)]" href={`mailto:${site.email}`}>
+                  {site.email}
+                </a>
               </p>
               <p>
-                Teléfonos: <a className="text-white transition hover:text-[var(--qts-accent)]" href={`tel:${site.phonePanama}`}>{site.phonePanama}</a> · <a className="text-white transition hover:text-[var(--qts-accent)]" href={`tel:${site.phoneUsa}`}>{site.phoneUsa}</a>
+                Teléfonos:{' '}
+                <a className="text-white transition hover:text-[var(--qts-accent)]" href={`tel:${site.phonePanama}`}>
+                  {site.phonePanama}
+                </a>{' '}
+                ·{' '}
+                <a className="text-white transition hover:text-[var(--qts-accent)]" href={`tel:${site.phoneUsa}`}>
+                  {site.phoneUsa}
+                </a>
               </p>
               <p>
-                WhatsApp: <a className="text-white transition hover:text-[var(--qts-accent)]" href={`https://wa.me/${site.whatsapp.replace(/[^\d]/g, '')}`}>{site.whatsapp}</a>
+                WhatsApp:{' '}
+                <a className="text-white transition hover:text-[var(--qts-accent)]" href={`https://wa.me/${site.whatsapp.replace(/[^\d]/g, '')}`}>
+                  {site.whatsapp}
+                </a>
               </p>
               <p>Ubicación: Panamá · USA · Venezuela / cobertura regional.</p>
             </div>
