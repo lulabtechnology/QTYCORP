@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { assets } from '@/lib/asset-routes';
 import { footerLinks, site } from '@/lib/site-data';
 import { Container } from '@/components/shared/container';
 
@@ -11,9 +10,15 @@ export function Footer() {
       <Container className="py-16">
         <div className="grid gap-10 lg:grid-cols-[1.3fr_0.8fr_0.9fr]">
           <div>
-            <div className="flex max-w-xl flex-col items-start">
-              <Image src={assets.brand.logoLight} alt="Quality Techno Services" width={260} height={78} className="h-16 w-auto sm:h-20" />
-              <p className="mt-7 max-w-xl text-sm leading-7 text-white/70">
+            <div className="flex max-w-xl flex-col items-center text-center">
+              <Image
+                src="/images/brand/logo-qts-footer.png"
+                alt="Quality Techno Services"
+                width={420}
+                height={440}
+                className="h-24 w-auto sm:h-28"
+              />
+              <p className="mt-6 max-w-lg text-sm leading-7 text-white/72">
                 {site.name} · Soluciones industriales, representación técnica y soporte especializado para activos y operaciones críticas.
               </p>
             </div>

@@ -42,15 +42,15 @@ export function Navbar() {
               : 'border-white/10 bg-white/5 backdrop-blur-md',
           )}
         >
-          <div className="flex h-17 items-center gap-4">
+          <div className="flex h-[76px] items-center gap-4 lg:h-[84px]">
             <Link href="/" className="relative flex shrink-0 items-center">
               <Image
                 src={solid ? assets.brand.logoDark : assets.brand.logoLight}
                 alt="Quality Techno Services"
-                width={170}
-                height={44}
+                width={220}
+                height={74}
                 priority
-                className="h-9 w-auto lg:h-10"
+                className="h-11 w-auto lg:h-14"
               />
             </Link>
 
