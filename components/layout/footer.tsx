@@ -12,13 +12,13 @@ export function Footer() {
           <div>
             <div className="flex max-w-xl flex-col items-center text-center">
               <Image
-                src="/images/brand/logo-qts-footer.png"
+                src="/images/brand/logo-qts-brand.png"
                 alt="Quality Techno Services"
-                width={420}
-                height={440}
-                className="h-24 w-auto sm:h-28"
+                width={520}
+                height={550}
+                className="mx-auto h-auto w-[220px] max-w-full drop-shadow-[0_10px_24px_rgba(0,0,0,0.22)] sm:w-[250px] md:w-[270px]"
               />
-              <p className="mt-6 max-w-lg text-sm leading-7 text-white/72">
+              <p className="mt-5 max-w-lg text-sm leading-7 text-white/72">
                 {site.name} · Soluciones industriales, representación técnica y soporte especializado para activos y operaciones críticas.
               </p>
             </div>

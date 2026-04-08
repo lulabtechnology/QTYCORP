@@ -36,21 +36,21 @@ export function Navbar() {
       <Container className="pt-4">
         <div
           className={cn(
-            'rounded-full border px-4 transition-all duration-300 md:px-5',
+            'rounded-full border px-5 transition-all duration-300 md:px-6',
             solid
               ? 'border-[var(--qts-line)] bg-[rgba(245,244,241,0.9)] shadow-[0_16px_40px_rgba(9,17,31,0.14)] backdrop-blur-xl'
               : 'border-white/10 bg-white/5 backdrop-blur-md',
           )}
         >
-          <div className="flex h-[76px] items-center gap-4 lg:h-[84px]">
+          <div className="flex h-[88px] items-center gap-4 lg:h-[96px]">
             <Link href="/" className="relative flex shrink-0 items-center">
               <Image
-                src={solid ? assets.brand.logoDark : assets.brand.logoLight}
+                src="/images/brand/logo-qts-brand.png"
                 alt="Quality Techno Services"
-                width={220}
-                height={74}
+                width={260}
+                height={275}
                 priority
-                className="h-11 w-auto lg:h-14"
+                className="h-[64px] w-auto drop-shadow-[0_6px_18px_rgba(0,0,0,0.28)] md:h-[72px] lg:h-[78px]"
               />
             </Link>
 
