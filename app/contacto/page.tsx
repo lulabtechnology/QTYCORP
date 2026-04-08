@@ -5,7 +5,7 @@ import { Container } from '@/components/shared/container';
 import { PageHero } from '@/components/shared/page-hero';
 import { Reveal } from '@/components/shared/reveal';
 import { SectionHeading } from '@/components/shared/section-heading';
-import { contactPage, primaryCta, site } from '@/lib/site-data';
+import { contactPage, primaryCta } from '@/lib/site-data';
 import { assets } from '@/lib/asset-routes';
 
 export const metadata = {
@@ -28,39 +28,14 @@ export default function ContactPage() {
 
       <section className="bg-white py-24">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-start">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:items-start">
             <Reveal>
-              <div className="min-w-0">
+              <div className="min-w-0 max-w-xl">
                 <SectionHeading eyebrow="Información de contacto" title="Estamos para ayudarle" description={contactPage.intro} />
-                <div className="mt-10 grid gap-x-8 gap-y-6 sm:grid-cols-2">
-                  {contactPage.infoCards.map((item, index) => {
-                    const Icon = item.icon;
-                    return (
-                      <Reveal key={item.label} delay={index * 0.05}>
-                        <a href={item.href} className="group flex min-w-0 items-start gap-4 py-1 transition hover:opacity-80">
-                          <div className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
-                            <Icon className="size-5" />
-                          </div>
-                          <div className="min-w-0 pt-1">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[var(--qts-blue-muted)] sm:text-xs sm:tracking-[0.28em]">
-                              {item.label}
-                            </p>
-                            <p className="mt-2 text-[15px] font-semibold leading-6 text-[var(--qts-ink)] [overflow-wrap:anywhere] sm:text-base">
-                              {item.value}
-                            </p>
-                          </div>
-                        </a>
-                      </Reveal>
-                    );
-                  })}
-                </div>
                 <Reveal delay={0.08}>
-                  <div className="mt-10 border-t border-[var(--qts-line)] pt-8">
+                  <div className="mt-8 border-t border-[var(--qts-line)] pt-8">
                     <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-blue-muted)]">Cobertura regional</p>
                     <p className="mt-4 text-lg leading-8 text-[var(--qts-ink)]">Panamá · USA · Venezuela · Mercados estratégicos de la región.</p>
-                    <p className="mt-4 text-sm leading-7 text-[var(--qts-muted)] [overflow-wrap:anywhere]">
-                      Correo: {site.email} · Teléfono Panamá: {site.phonePanama} · Teléfono USA: {site.phoneUsa}
-                    </p>
                   </div>
                 </Reveal>
               </div>

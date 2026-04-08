@@ -97,10 +97,10 @@ export default function CompanyPage() {
                 description={companyPage.capabilities.intro}
               />
             </Reveal>
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            <div className="mt-10 grid auto-rows-fr gap-4 sm:grid-cols-2">
               {companyPage.capabilities.bullets.map((item, index) => (
                 <Reveal key={item} delay={index * 0.04}>
-                  <div className="rounded-[22px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] px-5 py-4 text-[15px] leading-7 text-[var(--qts-ink)] shadow-[0_14px_36px_rgba(9,17,31,0.04)]">
+                  <div className="flex min-h-[86px] h-full items-center rounded-[22px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] px-5 py-4 text-[15px] leading-7 text-[var(--qts-ink)] shadow-[0_14px_36px_rgba(9,17,31,0.04)]">
                     {item}
                   </div>
                 </Reveal>
@@ -181,12 +181,12 @@ export default function CompanyPage() {
                   title="Una forma de trabajo orientada a resultados"
                   description="Abordamos cada oportunidad con una visión práctica, técnica y comercial. Buscamos comprender la necesidad del cliente, evaluar la aplicación y proponer soluciones alineadas a los objetivos operativos, técnicos y económicos de cada proyecto."
                 />
-                <div className="mt-10 space-y-4">
+                <div className="mt-10 space-y-5">
                   {companyPage.workSteps.map((step, index) => (
                     <Reveal key={step} delay={index * 0.05}>
-                      <div className="flex items-center gap-4 rounded-[22px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] px-5 py-4">
-                        <span className="inline-flex size-10 items-center justify-center rounded-full bg-[var(--qts-accent)] text-sm font-semibold text-white">0{index + 1}</span>
-                        <span className="text-base font-semibold text-[var(--qts-ink)]">{step}</span>
+                      <div className="flex items-start gap-5 border-b border-[var(--qts-line)] pb-5 last:border-b-0 last:pb-0">
+                        <span className="min-w-[2.3rem] text-base font-semibold tracking-[0.14em] text-[var(--qts-accent)]">0{index + 1}</span>
+                        <span className="text-[1.05rem] font-semibold leading-8 text-[var(--qts-ink)]">{step}</span>
                       </div>
                     </Reveal>
                   ))}
