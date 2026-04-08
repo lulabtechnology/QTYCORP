@@ -27,7 +27,7 @@ export function IndustriesGrid({ dark = false }: { dark?: boolean }) {
                       : 'flex h-full flex-col overflow-hidden rounded-[26px] border border-[var(--qts-line)] bg-white shadow-[0_18px_60px_rgba(5,12,24,0.08)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_24px_70px_rgba(5,12,24,0.14)]'
                   }
                 >
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[rgba(255,255,255,0.04)]">
                     <Image src={industry.src} alt={industry.title} fill className="object-cover transition duration-700 hover:scale-105" />
                   </div>
                   <div className="flex min-h-[132px] flex-1 items-center gap-4 p-5 sm:min-h-[144px]">

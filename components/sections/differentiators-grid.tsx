@@ -17,10 +17,10 @@ export function DifferentiatorsGrid() {
           {differentiators.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.06}>
               <div className="flex h-full flex-col overflow-hidden rounded-[28px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] shadow-[0_16px_40px_rgba(15,23,42,0.06)] transition hover:-translate-y-1 hover:border-[var(--qts-accent)] hover:shadow-[0_22px_48px_rgba(15,23,42,0.1)]">
-                <div className="border-b border-white/12 bg-[linear-gradient(135deg,var(--qts-navy),rgba(39,55,84,0.94))] px-6 py-5">
-                  <h3 className="text-xl font-semibold tracking-[-0.03em] text-white">{item.title}</h3>
+                <div className="flex min-h-[118px] items-start border-b border-white/12 bg-[linear-gradient(135deg,var(--qts-navy),rgba(39,55,84,0.94))] px-6 py-5">
+                  <h3 className="text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.035em] text-white">{item.title}</h3>
                 </div>
-                <div className="flex flex-1 items-start px-6 py-6">
+                <div className="flex min-h-[180px] flex-1 items-start px-6 py-6">
                   <p className="text-sm leading-7 text-[var(--qts-muted)]">{item.description}</p>
                 </div>
               </div>

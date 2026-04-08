@@ -1,5 +1,6 @@
 import { HeroVideo } from '@/components/layout/hero-video';
 import { ManufacturerStrip } from '@/components/sections/manufacturer-strip';
+import { ClientsStrip } from '@/components/sections/clients-strip';
 import { TrustBlock } from '@/components/sections/trust-block';
 import { SolutionsGrid } from '@/components/sections/solutions-grid';
 import { ProposalGrid } from '@/components/sections/proposal-grid';
@@ -53,6 +54,7 @@ export default function HomePage() {
       </section>
 
       <ManufacturerStrip />
+      <ClientsStrip />
       <TrustBlock />
       <SolutionsGrid />
       <ProposalGrid />

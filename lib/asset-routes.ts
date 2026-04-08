@@ -33,6 +33,7 @@ export const assets = {
     },
     trust: '/images/home/trust/planta-industrial-panorama.jpg',
     cta: '/images/home/cta/cta-final-bg.jpg',
+    clients: '/images/home/clients/empresas-confian-nosotros.jpg',
   },
   company: {
     hero: '/images/company/hero-company.jpg',
