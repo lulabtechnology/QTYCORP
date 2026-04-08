@@ -81,9 +81,10 @@ export const assets = {
     background: '/images/contact/contacto-bg.jpg',
   },
   manufacturers: {
-    unique: '/images/manufacturers/unique-polymer.svg',
-    nov: '/images/manufacturers/nov.svg',
-    agi: '/images/manufacturers/agi-industries.svg',
+    unique: '/images/manufacturers/unique-polymer.jpg',
+    agi: '/images/manufacturers/agi-industries.jpg',
+    flowserve: '/images/manufacturers/flowserve.jpg',
+    nov: '/images/manufacturers/nov.png',
   },
   resourcesDocs: {
     catalogoGeneral: '/docs/resources/catalogo-general-qts.pdf',

@@ -24,7 +24,7 @@ export default function HomePage() {
               </p>
             </Reveal>
             <Reveal delay={0.08}>
-              <h1 className="mt-6 max-w-3xl text-balance text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-[4.6rem] lg:leading-[1.02]">
+              <h1 className="mt-6 max-w-4xl text-balance text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-[4.2rem] lg:leading-[1.03]">
                 {homeHero.title}
               </h1>
             </Reveal>
@@ -46,15 +46,6 @@ export default function HomePage() {
             <Reveal delay={0.26}>
               <div className="mt-10 max-w-3xl rounded-[24px] border border-white/12 bg-white/8 p-5 backdrop-blur-md">
                 <p className="text-sm leading-7 text-white/78">{homeHero.institutionalLine}</p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.32}>
-              <div className="mt-8 flex flex-wrap gap-3">
-                {homeHero.supportMessages.map((item) => (
-                  <div key={item} className="rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm text-white/74 backdrop-blur-sm">
-                    {item}
-                  </div>
-                ))}
               </div>
             </Reveal>
           </div>

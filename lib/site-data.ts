@@ -66,23 +66,19 @@ export const navLinks = [
 export const manufacturerLogos = [
   { name: 'Unique Polymer Systems', src: assets.manufacturers.unique },
   { name: 'AGI Industries', src: assets.manufacturers.agi },
+  { name: 'Flowserve', src: assets.manufacturers.flowserve },
   { name: 'NOV', src: assets.manufacturers.nov },
 ] as const;
 
 export const homeHero = {
   eyebrow: 'Representación técnica · suministro especializado · soporte industrial',
-  title: 'Soluciones industriales para operaciones y activos críticos',
+  title: 'Garantizamos la Continuidad de sus Procesos con Tecnologías de Reparación y Bombeo de Clase Mundial.',
   description:
     'Conectamos a la industria en Panamá y la región con soluciones, tecnologías y acompañamiento técnico-comercial para bombeo, reparación, protección de activos y continuidad operativa.',
   primaryCta: { label: 'Solicitar asesoría técnica', href: '/contacto' },
   secondaryCta: { label: 'Explorar soluciones', href: '/#soluciones' },
   institutionalLine:
     'Agente autorizado de AGI Industries en Panamá · Master Distributor de Unique Polymer Systems para Latinoamérica, Texas, Louisiana y Florida · Soluciones especializadas en bombeo, manejo de fluidos y tecnologías industriales para mercados estratégicos de la región',
-  supportMessages: [
-    'Soporte técnico y comercial especializado',
-    'Respaldo de fabricantes internacionales',
-    'Soluciones para industrias y aplicaciones críticas',
-  ],
 };
 
 export const institutionalPillars = [
