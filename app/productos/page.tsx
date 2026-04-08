@@ -90,7 +90,7 @@ export default function ProductsPage() {
                     <Image src={item.src} alt={item.title} fill className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                   </div>
                   <div className="flex flex-1 flex-col p-7">
-                    <h3 className="text-[1.95rem] font-semibold leading-tight tracking-[-0.035em] text-[var(--qts-ink)]">{item.title}</h3>
+                    <h3 className="text-[1.9rem] font-semibold leading-[1.1] tracking-[-0.035em] text-[var(--qts-ink)]">{item.title}</h3>
                     <p className="mt-4 text-base leading-8 text-[var(--qts-muted)]">{item.description}</p>
                   </div>
                 </article>
@@ -117,42 +117,42 @@ export default function ProductsPage() {
               className="mx-auto max-w-6xl"
             />
           </Reveal>
-          <div className="mt-14 grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <Reveal delay={0.04}>
+            <div className="mx-auto mt-6 max-w-4xl space-y-5 text-center text-[1.03rem] leading-9 text-[var(--qts-muted)]">
+              <p>
+                En QTS no presentamos el portafolio como una lista de referencias aisladas, sino como un conjunto de soluciones que deben
+                responder a una necesidad real de operación.
+              </p>
+              <p>
+                Nuestro valor está en ayudar a seleccionar mejor, evaluar con mayor claridad y conectar cada requerimiento con una
+                alternativa técnicamente confiable y comercialmente viable.
+              </p>
+            </div>
+          </Reveal>
+          <div className="mt-14 grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
             <Reveal>
-              <div className="relative min-h-[650px] overflow-hidden rounded-[36px] border border-[rgba(30,36,48,0.08)] shadow-[0_24px_72px_rgba(9,17,31,0.08)]">
+              <div className="relative min-h-[580px] overflow-hidden rounded-[36px] border border-[rgba(30,36,48,0.08)] shadow-[0_24px_72px_rgba(9,17,31,0.08)]">
                 <Image src={assets.products.portfolio} alt="Valor técnico y comercial del portafolio" fill className="object-cover" />
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div>
-                <div className="max-w-3xl space-y-6 text-[1.03rem] leading-9 text-[var(--qts-muted)]">
-                  <p>
-                    En QTS no presentamos el portafolio como una lista de referencias aisladas, sino como un conjunto de soluciones que deben
-                    responder a una necesidad real de operación.
-                  </p>
-                  <p>
-                    Nuestro valor está en ayudar a seleccionar mejor, evaluar con mayor claridad y conectar cada requerimiento con una
-                    alternativa técnicamente confiable y comercialmente viable.
-                  </p>
-                </div>
-                <div className="mt-10 grid gap-6">
-                  {valueItems.map((item, index) => {
-                    const Icon = item.icon;
-                    return (
-                      <Reveal key={item.title} delay={index * 0.05}>
-                        <div className="flex items-start gap-5">
-                          <div className="flex size-20 shrink-0 items-center justify-center rounded-[26px] border border-[rgba(244,122,32,0.12)] bg-white shadow-[0_12px_34px_rgba(18,24,39,0.06)]">
-                            <Icon className="size-10 text-[var(--qts-accent)]" strokeWidth={1.8} />
-                          </div>
-                          <div>
-                            <h3 className="text-[2rem] font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)]">{item.title}</h3>
-                            <p className="mt-2 max-w-3xl text-base leading-8 text-[var(--qts-muted)]">{item.description}</p>
-                          </div>
+              <div className="grid gap-6 pt-1">
+                {valueItems.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <Reveal key={item.title} delay={index * 0.05}>
+                      <div className="flex items-start gap-5">
+                        <div className="flex size-20 shrink-0 items-center justify-center rounded-[26px] border border-[rgba(244,122,32,0.12)] bg-white shadow-[0_12px_34px_rgba(18,24,39,0.06)]">
+                          <Icon className="size-10 text-[var(--qts-accent)]" strokeWidth={1.8} />
                         </div>
-                      </Reveal>
-                    );
-                  })}
-                </div>
+                        <div>
+                          <h3 className="text-[1.95rem] font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--qts-ink)]">{item.title}</h3>
+                          <p className="mt-2 max-w-3xl text-base leading-8 text-[var(--qts-muted)]">{item.description}</p>
+                        </div>
+                      </div>
+                    </Reveal>
+                  );
+                })}
               </div>
             </Reveal>
           </div>
@@ -169,17 +169,17 @@ export default function ProductsPage() {
               className="mx-auto max-w-6xl"
             />
           </Reveal>
-          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+          <div className="mt-14 grid auto-rows-fr gap-6 lg:grid-cols-3">
             {productsPage.evaluationCards.map((item, index) => (
               <Reveal key={item.title} delay={index * 0.06}>
-                <article className="h-full overflow-hidden rounded-[32px] border border-[var(--qts-line)] bg-white shadow-[0_20px_56px_rgba(18,24,39,0.08)]">
+                <article className="flex h-full flex-col overflow-hidden rounded-[32px] border border-[var(--qts-line)] bg-white shadow-[0_20px_56px_rgba(18,24,39,0.08)]">
                   <div className="relative h-56 overflow-hidden">
                     <Image src={item.src} alt={item.title} fill className="object-cover" />
                   </div>
-                  <div className="p-8">
-                    <h3 className="text-[2rem] font-semibold tracking-[-0.04em] text-[var(--qts-ink)]">{item.title}</h3>
+                  <div className="flex flex-1 flex-col p-8">
+                    <h3 className="min-h-[4.5rem] text-[1.9rem] font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--qts-ink)]">{item.title}</h3>
                     <p className="mt-5 text-base leading-8 text-[var(--qts-muted)]">{item.description}</p>
-                    <ul className="mt-6 space-y-3">
+                    <ul className="mt-auto space-y-3 pt-6">
                       {item.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-3 text-base leading-7 text-[var(--qts-ink)]">
                           <CheckCircle2 className="mt-1 size-5 shrink-0 text-[var(--qts-accent)]" />
@@ -207,11 +207,11 @@ export default function ProductsPage() {
               className="mx-auto max-w-4xl"
             />
           </Reveal>
-          <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-3">
+          <div className="mx-auto mt-12 grid max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {manufacturerLogos.map((logo, index) => (
               <Reveal key={logo.name} delay={index * 0.05}>
-                <div className="flex min-h-24 items-center justify-center rounded-[22px] border border-white/12 bg-white/6 px-6 py-5 backdrop-blur-sm">
-                  <Image src={logo.src} alt={logo.name} width={180} height={56} className="h-9 w-auto object-contain opacity-95" />
+                <div className="flex min-h-[118px] items-center justify-center rounded-[24px] border border-white/12 bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] px-8 py-6 shadow-[0_22px_50px_rgba(8,17,35,0.22)]">
+                  <Image src={logo.src} alt={logo.name} width={210} height={70} className="max-h-14 w-auto object-contain" />
                 </div>
               </Reveal>
             ))}

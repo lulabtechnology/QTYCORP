@@ -491,7 +491,7 @@ export const productsPage = {
   },
   evaluationCards: [
     {
-      title: 'Análisis de la Aplicación',
+      title: 'Análisis de aplicación',
       description:
         'Evaluamos las demandas del proceso y los modos de falla para definir la solución más adecuada.',
       bullets: ['Condiciones reales de operación', 'Modos de falla del equipo'],
