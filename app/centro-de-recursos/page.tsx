@@ -57,7 +57,7 @@ export default function ResourcesPage() {
             <Reveal>
               <div>
                 <SectionHeading title="Información útil para una evaluación más clara" description={resourcePage.intro} />
-                <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--qts-muted)]">{resourcePage.intro2}</p>
+                <p className="mt-5 max-w-2xl text-base leading-8 sm:text-lg text-[var(--qts-muted)]">{resourcePage.intro2}</p>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
@@ -82,7 +82,7 @@ export default function ResourcesPage() {
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {repairVideos.map((video, index) => (
               <Reveal key={video.title} delay={index * 0.06}>
-                <article className="group overflow-hidden rounded-[30px] border border-[var(--qts-line)] bg-white shadow-[0_18px_54px_rgba(9,17,31,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_70px_rgba(9,17,31,0.12)]">
+                <article className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-[var(--qts-line)] bg-white shadow-[0_18px_54px_rgba(9,17,31,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_70px_rgba(9,17,31,0.12)]">
                   <div className="relative aspect-video overflow-hidden bg-[var(--qts-navy)]">
                     {video.type === 'local' ? (
                       <video
@@ -109,9 +109,9 @@ export default function ResourcesPage() {
                       Video {index + 1}
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold tracking-[-0.03em] text-[var(--qts-ink)]">{video.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-[var(--qts-muted)]">{video.description}</p>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="min-h-[72px] text-xl font-semibold tracking-[-0.03em] text-[var(--qts-ink)]">{video.title}</h3>
+                    <p className="mt-3 min-h-[112px] text-sm leading-7 text-[var(--qts-muted)]">{video.description}</p>
                   </div>
                 </article>
               </Reveal>
@@ -161,13 +161,6 @@ export default function ResourcesPage() {
                   description="Si requiere fichas técnicas, hojas de datos, documentación por aplicación o información complementaria para evaluación técnica o comercial, nuestro equipo puede apoyarle con la información adecuada según su requerimiento."
                   light
                 />
-                <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                  {resourcePage.requestOptions.map((item, index) => (
-                    <Reveal key={item} delay={index * 0.05}>
-                      <div className="rounded-[22px] border border-white/10 bg-white/6 px-5 py-4 text-sm font-semibold text-white/84">{item}</div>
-                    </Reveal>
-                  ))}
-                </div>
               </div>
             </Reveal>
             <Reveal delay={0.08}>
