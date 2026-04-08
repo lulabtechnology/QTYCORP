@@ -4,17 +4,27 @@ import { Container } from '@/components/shared/container';
 import { Reveal } from '@/components/shared/reveal';
 import { SectionHeading } from '@/components/shared/section-heading';
 
-export function IndustriesGrid({ dark = false }: { dark?: boolean }) {
+export function IndustriesGrid({
+  dark = false,
+  eyebrow,
+  title = 'Soluciones para industrias donde la continuidad operativa es crítica',
+  description = 'En Quality Techno Services apoyamos a empresas e infraestructuras estratégicas con soluciones industriales orientadas a confiabilidad, protección de activos, manejo de fluidos y soporte técnico-comercial para aplicaciones de alta exigencia.',
+  showHeading = true,
+}: {
+  dark?: boolean;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  showHeading?: boolean;
+}) {
   return (
     <section id="industrias" className={dark ? 'bg-[var(--qts-navy)] py-24 text-white' : 'bg-white py-24'}>
       <Container>
-        <Reveal>
-          <SectionHeading
-            title="Soluciones para industrias donde la continuidad operativa es crítica"
-            description="En Quality Techno Services apoyamos a empresas e infraestructuras estratégicas con soluciones industriales orientadas a confiabilidad, protección de activos, manejo de fluidos y soporte técnico-comercial para aplicaciones de alta exigencia."
-            light={dark}
-          />
-        </Reveal>
+        {showHeading ? (
+          <Reveal>
+            <SectionHeading eyebrow={eyebrow} title={title} description={description} light={dark} />
+          </Reveal>
+        ) : null}
         <div className="mt-12 grid items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {industries.map((industry, index) => {
             const Icon = industry.icon;

@@ -4,6 +4,7 @@ import { Container } from '@/components/shared/container';
 import { Reveal } from '@/components/shared/reveal';
 import { SectionHeading } from '@/components/shared/section-heading';
 import { CtaSection } from '@/components/shared/cta-section';
+import { IndustriesGrid } from '@/components/sections/industries-grid';
 import { companyPage, primaryCta } from '@/lib/site-data';
 import { assets } from '@/lib/asset-routes';
 
@@ -45,23 +46,16 @@ export default function CompanyPage() {
 
       <section className="bg-white py-24">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-            <Reveal>
-              <div>
-                <SectionHeading
-                  eyebrow="Quiénes somos"
-                  title="Una empresa enfocada en soluciones industriales de alto valor"
-                  description={companyPage.whoWeAre}
-                />
-                <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--qts-muted)]">{companyPage.whoWeAre2}</p>
-              </div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="relative min-h-[480px] overflow-hidden rounded-[32px] border border-[var(--qts-line)] shadow-[0_22px_80px_rgba(9,17,31,0.1)]">
-                <Image src={assets.company.who} alt="Equipo y operaciones industriales" fill className="object-cover" />
-              </div>
-            </Reveal>
-          </div>
+          <Reveal>
+            <div className="max-w-4xl">
+              <SectionHeading
+                eyebrow="Quiénes somos"
+                title="Una empresa enfocada en soluciones industriales de alto valor"
+                description={companyPage.whoWeAre}
+              />
+              <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--qts-muted)]">{companyPage.whoWeAre2}</p>
+            </div>
+          </Reveal>
         </Container>
       </section>
 
@@ -95,38 +89,59 @@ export default function CompanyPage() {
 
       <section className="bg-white py-24">
         <Container>
-          <div className="grid gap-10 xl:grid-cols-[1.02fr_0.98fr] xl:items-start">
+          <div className="max-w-4xl">
             <Reveal>
-              <div className="relative min-h-[540px] overflow-hidden rounded-[34px] border border-[var(--qts-line)] shadow-[0_22px_80px_rgba(9,17,31,0.1)]">
-                <Image src={assets.company.value} alt="Equipo técnico de Quality Techno Services" fill className="object-cover" />
-              </div>
+              <SectionHeading
+                eyebrow="Capacidades"
+                title={companyPage.capabilities.title}
+                description={companyPage.capabilities.intro}
+              />
             </Reveal>
-            <Reveal delay={0.08}>
-              <div className="flex h-full flex-col justify-center gap-10 xl:pl-4">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Nuestra esencia</p>
-                </div>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              {companyPage.capabilities.bullets.map((item, index) => (
+                <Reveal key={item} delay={index * 0.04}>
+                  <div className="rounded-[22px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] px-5 py-4 text-[15px] leading-7 text-[var(--qts-ink)] shadow-[0_14px_36px_rgba(9,17,31,0.04)]">
+                    {item}
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
 
-                <div className="border-b border-[var(--qts-line)] pb-9">
-                  <p className="text-[2rem] font-medium tracking-[-0.03em] text-[var(--qts-accent)]">Misión</p>
-                  <h2 className="mt-4 max-w-xl text-4xl font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)]">
+      <IndustriesGrid
+        dark
+        eyebrow="Sectores que atendemos"
+        title="Experiencia alineada a distintos entornos industriales"
+        description="Acompañamos requerimientos en sectores donde la confiabilidad, la seguridad y la continuidad operativa son clave, incluyendo:"
+      />
+
+      <section className="bg-white py-24">
+        <Container>
+          <Reveal>
+            <div className="max-w-5xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[var(--qts-accent)]">Nuestra esencia</p>
+              <div className="mt-10 grid gap-6 lg:grid-cols-2">
+                <article className="rounded-[30px] border border-[var(--qts-line)] bg-[var(--qts-ink-soft)] p-8 shadow-[0_18px_56px_rgba(9,17,31,0.06)]">
+                  <p className="text-[1.8rem] font-medium tracking-[-0.03em] text-[var(--qts-accent)]">Misión</p>
+                  <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)] lg:text-[2.3rem]">
                     {companyPage.missionTitle}
                   </h2>
-                  <p className="mt-5 text-lg font-medium text-[var(--qts-ink)]/84">{companyPage.missionSubtitle}</p>
-                  <p className="mt-5 max-w-xl text-base leading-8 text-[var(--qts-muted)]">{companyPage.mission}</p>
-                </div>
-
-                <div>
-                  <p className="text-[2rem] font-medium tracking-[-0.03em] text-[var(--qts-accent)]">Visión</p>
-                  <h2 className="mt-4 max-w-xl text-4xl font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)]">
+                  <p className="mt-4 text-base font-medium text-[var(--qts-ink)]/84">{companyPage.missionSubtitle}</p>
+                  <p className="mt-5 text-base leading-8 text-[var(--qts-muted)]">{companyPage.mission}</p>
+                </article>
+                <article className="rounded-[30px] border border-[var(--qts-line)] bg-white p-8 shadow-[0_18px_56px_rgba(9,17,31,0.06)]">
+                  <p className="text-[1.8rem] font-medium tracking-[-0.03em] text-[var(--qts-accent)]">Visión</p>
+                  <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.04em] text-[var(--qts-ink)] lg:text-[2.3rem]">
                     {companyPage.visionTitle}
                   </h2>
-                  <p className="mt-5 text-lg font-medium text-[var(--qts-ink)]/84">{companyPage.visionSubtitle}</p>
-                  <p className="mt-5 max-w-xl text-base leading-8 text-[var(--qts-muted)]">{companyPage.vision}</p>
-                </div>
+                  <p className="mt-4 text-base font-medium text-[var(--qts-ink)]/84">{companyPage.visionSubtitle}</p>
+                  <p className="mt-5 text-base leading-8 text-[var(--qts-muted)]">{companyPage.vision}</p>
+                </article>
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </Container>
       </section>
 

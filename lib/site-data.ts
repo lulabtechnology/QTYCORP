@@ -248,9 +248,9 @@ export const companyPage = {
     image: assets.company.hero,
   },
   whoWeAre:
-    'Quality Techno Services, S.A. es una empresa sólida respaldada por alianzas estratégicas con fabricantes reconocidos y soluciones de amplia trayectoria en el mercado. Nos especializamos en el suministro de productos y equipos industriales, así como en servicios altamente especializados en áreas como procura, venta, instalación, mantenimiento y soporte técnico.',
+    'Quality Techno Services, S.A. es una empresa especializada en representación técnica, suministro industrial y soporte técnico-comercial para operaciones y activos críticos. Nuestro enfoque está orientado a ayudar a cada cliente a identificar, evaluar e implementar soluciones confiables para aplicaciones industriales de alta exigencia.',
   whoWeAre2:
-    'Nuestro enfoque combina cercanía comercial, criterio técnico y atención personalizada para ofrecer soluciones confiables, orientadas a la continuidad operativa, la seguridad y el desempeño de los activos industriales.',
+    'Combinamos cercanía comercial, criterio técnico y atención personalizada para acompañar necesidades relacionadas con procura, selección de soluciones, reparación, protección de activos y continuidad operativa. Más que suministrar productos o servicios, buscamos aportar respaldo, claridad técnica y valor real en cada oportunidad.',
   valueProps: [
     {
       title: 'Respaldo internacional',
@@ -274,7 +274,7 @@ export const companyPage = {
       title: 'Atención personalizada',
       description: 'Relación directa y seguimiento orientado a resultados.',
       icon: Sparkles,
-      image: assets.company.presence,
+      image: assets.company.who,
     },
   ],
   missionTitle: 'Brindar soluciones industriales especializadas',
@@ -325,6 +325,20 @@ export const companyPage = {
   ],
   regionalBody:
     'QTS atiende requerimientos en Panamá, USA, Venezuela y mercados estratégicos de la región, conectando a la industria con fabricantes, tecnologías y soluciones orientadas a activos y operaciones críticas. Nuestra visión regional nos permite acompañar oportunidades con un enfoque flexible, cercano y respaldado por alianzas internacionales.',
+  capabilities: {
+    title: 'Soluciones y acompañamiento para aplicaciones industriales exigentes',
+    intro:
+      'Nuestra propuesta integra capacidades orientadas a brindar soporte en distintas etapas del proceso industrial:',
+    bullets: [
+      'Suministro de productos y equipos industriales',
+      'Representación técnica y comercial',
+      'Evaluación de aplicaciones y requerimientos operativos',
+      'Acompañamiento en procesos de procura y selección técnica',
+      'Soluciones para reparación y protección de activos',
+      'Soporte técnico-comercial especializado',
+      'Seguimiento durante implementación y operación',
+    ],
+  },
 };
 
 export const servicesPage = {
