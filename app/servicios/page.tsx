@@ -220,7 +220,7 @@ export default function ServicesPage() {
                     <Image src={service.src} alt={service.title} fill className="object-cover" />
                   </div>
                   <div className="flex flex-1 flex-col p-8">
-                    <h3 className="text-[1.7rem] font-semibold leading-[1.1] tracking-[-0.04em] text-[var(--qts-ink)] sm:text-[1.9rem]">
+                    <h3 className="min-h-[3.3em] text-[1.36rem] font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--qts-ink)] sm:text-[1.46rem]">
                       {service.title}
                     </h3>
                     <p className="mt-4 text-base leading-8 text-[var(--qts-muted)] sm:text-[1.03rem]">{service.description}</p>
@@ -249,13 +249,15 @@ export default function ServicesPage() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="max-w-3xl">
-                <h2 className="text-balance text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl lg:text-[3rem]">
-                  Especialización en confiabilidad, seguridad y continuidad operativa
-                </h2>
-                <p className="mt-5 max-w-2xl text-base leading-8 text-white/80 sm:text-[1.1rem]">
-                  Respaldo técnico y ejecución documentada para aplicaciones críticas de alta exigencia.
-                </p>
+              <div className="mx-auto max-w-3xl">
+                <div className="mx-auto max-w-[40rem] text-center">
+                  <h2 className="text-balance text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl lg:text-[3rem]">
+                    Especialización en confiabilidad, seguridad y continuidad operativa
+                  </h2>
+                  <p className="mt-5 text-base leading-8 text-white/82 sm:text-[1.18rem]">
+                    Respaldo técnico y ejecución documentada para aplicaciones críticas de alta exigencia.
+                  </p>
+                </div>
                 <div className="mt-8 space-y-4">
                   {featuredHighlights.map((item, index) => {
                     const Icon = item.icon;
@@ -289,7 +291,7 @@ export default function ServicesPage() {
               <h2 className="max-w-4xl text-balance text-3xl font-semibold tracking-[-0.04em] text-[var(--qts-ink)] sm:text-4xl lg:text-[3.2rem]">
                 Soporte técnico y servicios que reducen riesgo y mejoran el desempeño operativo
               </h2>
-              <p className="mt-6 max-w-4xl text-base leading-8 text-[var(--qts-muted)] sm:text-[1.1rem]">
+              <p className="mt-6 max-w-4xl text-[1.03rem] leading-8 text-[var(--qts-muted)] sm:text-[1.16rem]">
                 Ayudamos a nuestros clientes a reducir incertidumbre, optimizar la selección de soluciones y ejecutar con mayor seguridad en aplicaciones críticas, donde el desempeño del activo y la continuidad operativa son clave.
               </p>
             </Reveal>
@@ -311,7 +313,7 @@ export default function ServicesPage() {
                 );
               })}
             </div>
-            <p className="mt-8 text-sm leading-7 text-[var(--qts-muted)] sm:text-base">
+            <p className="mt-8 text-[0.98rem] leading-7 text-[var(--qts-muted)] sm:text-[1.08rem]">
               Aplicaciones críticas · Soporte técnico especializado · Enfoque en seguridad y continuidad
             </p>
           </div>

@@ -90,7 +90,7 @@ export default function ProductsPage() {
                     <Image src={item.src} alt={item.title} fill className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
                   </div>
                   <div className="flex flex-1 flex-col p-7">
-                    <h3 className="text-[1.9rem] font-semibold leading-[1.1] tracking-[-0.035em] text-[var(--qts-ink)]">{item.title}</h3>
+                    <h3 className="min-h-[3.35em] text-[1.36rem] font-semibold leading-[1.08] tracking-[-0.035em] text-[var(--qts-ink)] sm:text-[1.46rem]">{item.title}</h3>
                     <p className="mt-4 text-base leading-8 text-[var(--qts-muted)]">{item.description}</p>
                   </div>
                 </article>
@@ -177,8 +177,8 @@ export default function ProductsPage() {
                     <Image src={item.src} alt={item.title} fill className="object-cover" />
                   </div>
                   <div className="flex flex-1 flex-col p-8">
-                    <h3 className="min-h-[4.5rem] text-[1.9rem] font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--qts-ink)]">{item.title}</h3>
-                    <p className="mt-5 text-base leading-8 text-[var(--qts-muted)]">{item.description}</p>
+                    <h3 className="min-h-[4.2rem] text-[1.78rem] font-semibold leading-[1.08] tracking-[-0.04em] text-[var(--qts-ink)]">{item.title}</h3>
+                    <p className="mt-3.5 text-base leading-8 text-[var(--qts-muted)]">{item.description}</p>
                     <ul className="mt-auto space-y-3 pt-6">
                       {item.bullets.map((bullet) => (
                         <li key={bullet} className="flex items-start gap-3 text-base leading-7 text-[var(--qts-ink)]">
