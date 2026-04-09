@@ -47,13 +47,15 @@ export default function CompanyPage() {
       <section className="bg-white py-24">
         <Container>
           <Reveal>
-            <div className="max-w-4xl">
+            <div className="max-w-5xl">
               <SectionHeading
                 eyebrow="Quiénes somos"
                 title="Una empresa enfocada en soluciones industriales de alto valor"
-                description={companyPage.whoWeAre}
               />
-              <p className="mt-5 max-w-4xl text-base leading-8 text-[var(--qts-muted)]">{companyPage.whoWeAre2}</p>
+              <div className="mt-5 max-w-[68ch] space-y-5">
+                <p className="text-[1.02rem] leading-8 text-[var(--qts-muted)]">{companyPage.whoWeAre}</p>
+                <p className="text-[1.02rem] leading-8 text-[var(--qts-muted)]">{companyPage.whoWeAre2}</p>
+              </div>
             </div>
           </Reveal>
         </Container>
@@ -207,7 +209,7 @@ export default function CompanyPage() {
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
             <Reveal>
               <div className="relative min-h-[420px] overflow-hidden rounded-[32px] border border-white/10">
-                <Image src={assets.company.presence} alt="Presencia regional de QTS" fill className="object-cover" />
+                <Image src={assets.company.presence} alt="Presencia regional de QTS" fill className="object-cover object-center" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,30,52,0.2),rgba(18,30,52,0.78))]" />
               </div>
             </Reveal>
