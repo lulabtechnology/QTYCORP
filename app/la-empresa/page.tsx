@@ -47,14 +47,27 @@ export default function CompanyPage() {
       <section className="bg-white py-24">
         <Container>
           <Reveal>
-            <div className="max-w-5xl">
-              <SectionHeading
-                eyebrow="Quiénes somos"
-                title="Una empresa enfocada en soluciones industriales de alto valor"
-              />
-              <div className="mt-5 max-w-[68ch] space-y-5">
-                <p className="text-[1.02rem] leading-8 text-[var(--qts-muted)]">{companyPage.whoWeAre}</p>
-                <p className="text-[1.02rem] leading-8 text-[var(--qts-muted)]">{companyPage.whoWeAre2}</p>
+            <div className="grid gap-10 lg:grid-cols-[1.02fr_0.78fr] lg:items-center">
+              <div className="max-w-4xl">
+                <SectionHeading
+                  eyebrow="Quiénes somos"
+                  title="Una empresa enfocada en soluciones industriales de alto valor"
+                />
+                <div className="mt-5 max-w-[62ch] space-y-5">
+                  <p className="text-[1.02rem] leading-8 text-[var(--qts-muted)]">{companyPage.whoWeAre}</p>
+                  <p className="text-[1.02rem] leading-8 text-[var(--qts-muted)]">{companyPage.whoWeAre2}</p>
+                </div>
+              </div>
+              <div className="mx-auto flex w-full max-w-[420px] items-center justify-center lg:justify-end">
+                <div className="relative aspect-[1137/820] w-full max-w-[360px]">
+                  <Image
+                    src="/images/brand/logo-qts-mark.png"
+                    alt="Logotipo de Quality Techno Services"
+                    fill
+                    sizes="(max-width: 1024px) 60vw, 360px"
+                    className="object-contain drop-shadow-[0_16px_30px_rgba(18,30,52,0.12)]"
+                  />
+                </div>
               </div>
             </div>
           </Reveal>

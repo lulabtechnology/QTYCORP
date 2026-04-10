@@ -249,16 +249,16 @@ export default function ServicesPage() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="mx-auto max-w-3xl">
-                <div className="mx-auto max-w-[40rem] text-center">
+              <div className="mx-auto flex h-full w-full max-w-[44rem] flex-col justify-center">
+                <div className="mx-auto max-w-[38rem] text-center">
                   <h2 className="text-balance text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl lg:text-[3rem]">
                     Especialización en confiabilidad, seguridad y continuidad operativa
                   </h2>
-                  <p className="mt-5 text-base leading-8 text-white/82 sm:text-[1.18rem]">
+                  <p className="mt-5 text-[1.08rem] leading-8 text-white/82 sm:text-[1.22rem]">
                     Respaldo técnico y ejecución documentada para aplicaciones críticas de alta exigencia.
                   </p>
                 </div>
-                <div className="mt-8 space-y-4">
+                <div className="mt-8 w-full space-y-4">
                   {featuredHighlights.map((item, index) => {
                     const Icon = item.icon;
                     return (

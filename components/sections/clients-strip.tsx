@@ -15,7 +15,7 @@ export function ClientsStrip() {
                 alt="Empresas que confían en Quality Techno Services"
                 fill
                 sizes="(max-width: 1280px) 100vw, 1200px"
-                className="object-contain"
+                className="object-cover object-center"
               />
             </div>
           </div>
