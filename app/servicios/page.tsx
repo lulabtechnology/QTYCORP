@@ -236,7 +236,18 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(162,171,255,0.22),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(255,182,120,0.15),transparent_26%),linear-gradient(180deg,#4a4d7a_0%,#3b4b79_34%,#2f3e67_100%)]" />
         <div className="absolute inset-0 opacity-30 [background:linear-gradient(135deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.02)_100%)] [mask-image:radial-gradient(circle_at_center,black,transparent_78%)]" />
         <Container className="relative z-10">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <Reveal>
+            <div className="mx-auto max-w-[52rem] text-center">
+              <h2 className="text-balance text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl lg:text-[3rem]">
+                Especialización en confiabilidad, seguridad y continuidad operativa
+              </h2>
+              <p className="mt-5 text-[1.08rem] leading-8 text-white/82 sm:text-[1.22rem]">
+                Respaldo técnico y ejecución documentada para aplicaciones críticas de alta exigencia.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-14 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <Reveal>
               <div className="relative min-h-[620px] overflow-hidden rounded-[34px] border border-white/12 bg-[rgba(255,255,255,0.06)] shadow-[0_28px_84px_rgba(6,10,22,0.28)]">
                 <Image
@@ -249,33 +260,23 @@ export default function ServicesPage() {
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="mx-auto flex h-full w-full max-w-[44rem] flex-col justify-center">
-                <div className="mx-auto max-w-[38rem] text-center">
-                  <h2 className="text-balance text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl lg:text-[3rem]">
-                    Especialización en confiabilidad, seguridad y continuidad operativa
-                  </h2>
-                  <p className="mt-5 text-[1.08rem] leading-8 text-white/82 sm:text-[1.22rem]">
-                    Respaldo técnico y ejecución documentada para aplicaciones críticas de alta exigencia.
-                  </p>
-                </div>
-                <div className="mt-8 w-full space-y-4">
-                  {featuredHighlights.map((item, index) => {
-                    const Icon = item.icon;
-                    return (
-                      <Reveal key={item.title} delay={index * 0.05}>
-                        <div className="flex items-center gap-5 rounded-[24px] border border-white/14 bg-[rgba(31,39,66,0.55)] px-6 py-5 shadow-[0_20px_44px_rgba(8,12,24,0.22)] backdrop-blur-[5px]">
-                          <span className="inline-flex size-16 shrink-0 items-center justify-center rounded-[22px] border border-[rgba(244,122,32,0.24)] bg-[rgba(244,122,32,0.08)] text-[var(--qts-accent)]">
-                            <Icon className="size-8" />
-                          </span>
-                          <div>
-                            <h3 className="text-[1.32rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[1.55rem]">{item.title}</h3>
-                            <p className="mt-2 text-base leading-7 text-white/78">{item.description}</p>
-                          </div>
+              <div className="w-full space-y-4 lg:pt-0">
+                {featuredHighlights.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <Reveal key={item.title} delay={index * 0.05}>
+                      <div className="flex items-center gap-5 rounded-[24px] border border-white/14 bg-[rgba(31,39,66,0.55)] px-6 py-5 shadow-[0_20px_44px_rgba(8,12,24,0.22)] backdrop-blur-[5px]">
+                        <span className="inline-flex size-16 shrink-0 items-center justify-center rounded-[22px] border border-[rgba(244,122,32,0.24)] bg-[rgba(244,122,32,0.08)] text-[var(--qts-accent)]">
+                          <Icon className="size-8" />
+                        </span>
+                        <div>
+                          <h3 className="text-[1.32rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[1.55rem]">{item.title}</h3>
+                          <p className="mt-2 text-base leading-7 text-white/78">{item.description}</p>
                         </div>
-                      </Reveal>
-                    );
-                  })}
-                </div>
+                      </div>
+                    </Reveal>
+                  );
+                })}
               </div>
             </Reveal>
           </div>

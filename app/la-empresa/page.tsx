@@ -59,12 +59,12 @@ export default function CompanyPage() {
                 </div>
               </div>
               <div className="mx-auto flex w-full max-w-[420px] items-center justify-center lg:justify-end">
-                <div className="relative aspect-[1137/820] w-full max-w-[360px]">
+                <div className="relative aspect-[1137/1200] w-full max-w-[320px] sm:max-w-[340px] lg:max-w-[360px]">
                   <Image
-                    src="/images/brand/logo-qts-mark.png"
-                    alt="Logotipo de Quality Techno Services"
+                    src="/images/brand/logo-qts-footer.png"
+                    alt="Logotipo completo de Quality Techno Services"
                     fill
-                    sizes="(max-width: 1024px) 60vw, 360px"
+                    sizes="(max-width: 1024px) 58vw, 360px"
                     className="object-contain drop-shadow-[0_16px_30px_rgba(18,30,52,0.12)]"
                   />
                 </div>
