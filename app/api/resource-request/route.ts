@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { deliverFormSubmission } from '@/lib/form-delivery';
 
+export const runtime = 'nodejs';
+
 export async function POST(request: Request) {
   const payload = await request.json();
 
@@ -24,6 +26,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error(error);
-    return NextResponse.json({ ok: false, error: 'No fue posible procesar la solicitud.' }, { status: 500 });
+    return NextResponse.json({ ok: false, error: 'No fue posible enviar el correo. Verifique la configuración SMTP.' }, { status: 500 });
   }
 }

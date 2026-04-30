@@ -82,3 +82,19 @@ En ese caso:
 - el modo demo dejará la carga en consola del servidor
 
 Para producción real, conecte el webhook desde Vercel.
+
+## 8) Envío real de correos por SMTP
+
+Los formularios ahora envían correo real a `info@qualitytechnoservices.com` usando SMTP cuando no se usa webhook.
+
+Agregue estas variables en **Vercel > Project > Settings > Environment Variables**:
+
+- `SMTP_HOST` = servidor SMTP del correo, por ejemplo `smtp.hostinger.com`
+- `SMTP_PORT` = normalmente `465`
+- `SMTP_SECURE` = `true`
+- `SMTP_USER` = correo emisor, por ejemplo `info@qualitytechnoservices.com`
+- `SMTP_PASS` = contraseña del correo o contraseña de aplicación
+- `SMTP_FROM` = `Quality Techno Services <info@qualitytechnoservices.com>`
+- `QTS_MAIL_TO` = `info@qualitytechnoservices.com`
+
+Después de agregar las variables, haga un nuevo deploy. Sin estas variables, el servidor no podrá autenticar el correo y el formulario mostrará error.

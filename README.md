@@ -105,3 +105,19 @@ Consulte `DEPLOY_VERCEL.md`.
 - Los assets visuales incluidos permiten dejar el proyecto funcional y con rutas listas.
 - Los wordmarks de fabricantes incluidos deben considerarse placeholders visuales hasta reemplazarse por logos aprobados por marca.
 - Los PDFs en `public/docs/resources/` son archivos de reemplazo funcionales para que no existan links muertos.
+
+### Envío real de correos SMTP
+
+Los formularios de contacto y centro de recursos ahora pueden enviar correos directamente a `info@qualitytechnoservices.com` mediante SMTP.
+
+Variables necesarias en producción:
+
+- `SMTP_HOST`
+- `SMTP_PORT`
+- `SMTP_SECURE`
+- `SMTP_USER`
+- `SMTP_PASS`
+- `SMTP_FROM`
+- `QTS_MAIL_TO`
+
+Para Hostinger normalmente se usa `SMTP_HOST=smtp.hostinger.com`, `SMTP_PORT=465` y `SMTP_SECURE=true`.
