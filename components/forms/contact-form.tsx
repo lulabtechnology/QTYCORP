@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import { site } from '@/lib/site-data';
 import { cn } from '@/lib/utils';
 
 type ContactFormState = {
@@ -20,6 +21,28 @@ const initialState: ContactFormState = {
   inquiryType: '',
   message: '',
 };
+
+function buildMailtoUrl(values: ContactFormState) {
+  const subject = `Consulta desde la web QTS - ${values.inquiryType}`;
+  const body = [
+    'Hola Quality Techno Services,',
+    '',
+    'Deseo solicitar seguimiento para la siguiente consulta:',
+    '',
+    `Nombre: ${values.name}`,
+    `Empresa: ${values.company}`,
+    `Correo: ${values.email}`,
+    `Teléfono: ${values.phone}`,
+    `Tipo de consulta: ${values.inquiryType}`,
+    '',
+    'Mensaje:',
+    values.message,
+    '',
+    'Gracias.',
+  ].join('\n');
+
+  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 export function ContactForm({ compact = false }: { compact?: boolean }) {
   const [values, setValues] = useState<ContactFormState>(initialState);
@@ -44,32 +67,15 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
     return Object.keys(nextErrors).length === 0;
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!validate()) return;
 
-    setStatus('loading');
-    setMessage('');
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
-      });
-
-      if (!response.ok) {
-        throw new Error('No fue posible enviar la consulta.');
-      }
-
-      setStatus('success');
-      setMessage('Gracias. Su consulta fue enviada correctamente y QTS podrá darle seguimiento.');
-      setValues(initialState);
-      setErrors({});
-    } catch {
-      setStatus('error');
-      setMessage('Ocurrió un problema al enviar la consulta. Revise su conexión o intente nuevamente.');
-    }
+    setStatus('success');
+    setMessage('Se abrirá su cliente de correo con el mensaje listo para enviar a QTS.');
+    window.location.href = buildMailtoUrl(values);
+    setValues(initialState);
+    setErrors({});
   };
 
   const fieldClassName =
@@ -143,7 +149,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
           {message ? (
             <span className={cn(status === 'success' ? 'text-emerald-700' : 'text-red-600')}>{message}</span>
           ) : (
-            <span className="text-[var(--qts-muted)]">Atención consultiva y respuesta orientada al requerimiento técnico o comercial.</span>
+            <span className="text-[var(--qts-muted)]">Al enviar, se abrirá su correo con el mensaje preparado para QTS.</span>
           )}
         </div>
         <button
@@ -151,7 +157,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
           disabled={status === 'loading'}
           className="inline-flex items-center justify-center rounded-full bg-[var(--qts-accent)] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(244,122,32,0.24)] transition hover:bg-[var(--qts-accent-strong)] disabled:cursor-not-allowed disabled:opacity-70"
         >
-          {status === 'loading' ? 'Enviando...' : 'Enviar consulta'}
+          Abrir correo
         </button>
       </div>
     </form>

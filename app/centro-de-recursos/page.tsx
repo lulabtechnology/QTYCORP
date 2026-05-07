@@ -129,10 +129,10 @@ export default function ResourcesPage() {
               description="Una navegación corta, elegante y pensada para orientar la conversación comercial y técnica desde un primer nivel de información."
             />
           </Reveal>
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {resourceCatalogs.map((catalog, index) => (
               <Reveal key={catalog.title} delay={index * 0.06}>
-                <a href={catalog.href} className="group flex h-full items-start gap-4 rounded-[28px] border border-[var(--qts-line)] bg-white p-6 shadow-[0_14px_44px_rgba(9,17,31,0.06)] transition hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(9,17,31,0.1)]">
+                <a href={catalog.href} target="_blank" rel="noopener noreferrer" className="group flex h-full items-start gap-4 rounded-[28px] border border-[var(--qts-line)] bg-white p-6 shadow-[0_14px_44px_rgba(9,17,31,0.06)] transition hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(9,17,31,0.1)]">
                   <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[rgba(244,122,32,0.1)] text-[var(--qts-accent)]">
                     <FileText className="size-5" />
                   </span>

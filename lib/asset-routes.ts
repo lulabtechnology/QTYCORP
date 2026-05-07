@@ -88,8 +88,10 @@ export const assets = {
     nov: '/images/manufacturers/nov.png',
   },
   resourcesDocs: {
-    catalogoGeneral: '/docs/resources/catalogo-general-qts.pdf',
-    brochureServicios: '/docs/resources/brochure-servicios-industriales.pdf',
+    equiposBombeo: '/docs/resources/portafolio-equipos-bombeo.pdf',
+    solucionesUps: '/docs/resources/catalogo-soluciones-ups.pdf',
+    serviciosEspecializados: '/docs/resources/brochure-servicios-industriales-especializados.pdf',
+    instrumentacionControl: '/docs/resources/brochure-instrumentacion-control.pdf',
     brochureProductos: '/docs/resources/brochure-productos-destacados.pdf',
     presentacionCorporativa: '/docs/resources/presentacion-corporativa-qts.pdf',
   },

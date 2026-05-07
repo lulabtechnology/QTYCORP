@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { resourcePage } from '@/lib/site-data';
+import { resourcePage, site } from '@/lib/site-data';
 import { cn } from '@/lib/utils';
 
 type ResourceFormState = {
@@ -22,6 +22,28 @@ const initialState: ResourceFormState = {
   comment: '',
 };
 
+function buildMailtoUrl(values: ResourceFormState) {
+  const subject = `Solicitud de material técnico QTS - ${values.material}`;
+  const body = [
+    'Hola Quality Techno Services,',
+    '',
+    'Deseo solicitar información o material técnico con los siguientes datos:',
+    '',
+    `Nombre: ${values.name}`,
+    `Empresa: ${values.company}`,
+    `Correo: ${values.email}`,
+    `Interés: ${values.interest}`,
+    `Material solicitado: ${values.material}`,
+    '',
+    'Comentario:',
+    values.comment || 'Sin comentario adicional.',
+    '',
+    'Gracias.',
+  ].join('\n');
+
+  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export function ResourceForm() {
   const [values, setValues] = useState<ResourceFormState>(initialState);
   const [errors, setErrors] = useState<Partial<Record<keyof ResourceFormState, string>>>({});
@@ -39,30 +61,15 @@ export function ResourceForm() {
     return Object.keys(nextErrors).length === 0;
   };
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!validate()) return;
 
-    setStatus('loading');
-    setMessage('');
-
-    try {
-      const response = await fetch('/api/resource-request', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
-      });
-
-      if (!response.ok) throw new Error('Error');
-
-      setStatus('success');
-      setMessage('Solicitud enviada. QTS podrá asistirle con el material adecuado según su requerimiento.');
-      setValues(initialState);
-      setErrors({});
-    } catch {
-      setStatus('error');
-      setMessage('No fue posible enviar la solicitud. Intente nuevamente en unos minutos.');
-    }
+    setStatus('success');
+    setMessage('Se abrirá su cliente de correo con la solicitud lista para enviar a QTS.');
+    window.location.href = buildMailtoUrl(values);
+    setValues(initialState);
+    setErrors({});
   };
 
   const fieldClassName =
@@ -93,7 +100,7 @@ export function ResourceForm() {
       </div>
       <div className="mt-4 grid gap-4">
         <Field label="Material solicitado" error={errors.material}>
-          <input className={fieldClassName} value={values.material} onChange={(e) => setValues((prev) => ({ ...prev, material: e.target.value }))} placeholder="Ej. ficha técnica, brochure, información por aplicación" />
+          <input className={fieldClassName} value={values.material} onChange={(e) => setValues((prev) => ({ ...prev, material: e.target.value }))} placeholder="Ej. catálogo UPS, brochure, ficha técnica, información por aplicación" />
         </Field>
         <Field label="Comentario opcional" error={errors.comment}>
           <textarea className={cn(fieldClassName, 'min-h-30 resize-y')} value={values.comment} onChange={(e) => setValues((prev) => ({ ...prev, comment: e.target.value }))} placeholder="Comparta el contexto de su consulta o la aplicación que desea evaluar." />
@@ -101,10 +108,10 @@ export function ResourceForm() {
       </div>
       <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-h-6 text-sm" aria-live="polite">
-          {message ? <span className={cn(status === 'success' ? 'text-emerald-300' : 'text-red-300')}>{message}</span> : <span className="text-white/58">Solicitud técnica orientada a una atención más precisa y consultiva.</span>}
+          {message ? <span className={cn(status === 'success' ? 'text-emerald-300' : 'text-red-300')}>{message}</span> : <span className="text-white/58">Al enviar, se abrirá su correo con la solicitud preparada para QTS.</span>}
         </div>
         <button type="submit" disabled={status === 'loading'} className="inline-flex items-center justify-center rounded-full bg-[var(--qts-accent)] px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(244,122,32,0.24)] transition hover:bg-[var(--qts-accent-strong)] disabled:cursor-not-allowed disabled:opacity-70">
-          {status === 'loading' ? 'Enviando...' : 'Solicitar información'}
+          Abrir correo
         </button>
       </div>
     </form>

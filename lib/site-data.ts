@@ -524,19 +524,29 @@ export const productsPage = {
 
 export const resourceCatalogs = [
   {
-    title: 'Catálogo general de soluciones',
-    description: 'Resumen ejecutivo del portafolio industrial de QTS y sus áreas de aplicación.',
-    href: assets.resourcesDocs.catalogoGeneral,
+    title: 'Catálogo de Equipos de Bombeo',
+    description: 'Portafolio de productos de bombeo Flowserve para aplicaciones industriales, agua, energía, oil & gas y procesos críticos.',
+    href: assets.resourcesDocs.equiposBombeo,
   },
   {
-    title: 'Brochure de servicios industriales',
-    description: 'Documento orientado a capacidades de soporte técnico, intervención especializada y seguridad industrial.',
-    href: assets.resourcesDocs.brochureServicios,
+    title: 'Instrumentación & Control',
+    description: 'Dispositivos de medición, monitoreo y sistemas de control para automatización y eficiencia de procesos industriales.',
+    href: assets.resourcesDocs.instrumentacionControl,
   },
   {
     title: 'Brochure de productos destacados',
     description: 'Selección de líneas de solución para bombeo, protección, reparación y continuidad operativa.',
     href: assets.resourcesDocs.brochureProductos,
+  },
+  {
+    title: 'Brochure de servicios industriales especializados',
+    description: 'Documento orientado a capacidades de soporte técnico, intervención especializada y seguridad industrial.',
+    href: assets.resourcesDocs.serviciosEspecializados,
+  },
+  {
+    title: 'Catálogo de soluciones UPS',
+    description: 'Soluciones de reparación para protección contra corrosión y desgaste.',
+    href: assets.resourcesDocs.solucionesUps,
   },
   {
     title: 'Presentación corporativa',
@@ -557,11 +567,16 @@ export const resourcePage = {
   intro2:
     'Para documentación técnica más específica, fichas técnicas, información por aplicación o requerimientos particulares, le invitamos a contactarnos para brindarle una atención más precisa y alineada a su necesidad.',
   requestOptions: [
+    'Catálogo de Equipos de Bombeo',
+    'Instrumentación & Control',
+    'Catálogo de soluciones UPS',
+    'Brochure de servicios industriales especializados',
+    'Brochure de productos destacados',
+    'Presentación corporativa',
     'Fichas técnicas',
     'Hojas de datos',
     'Información por producto',
     'Información por aplicación',
-    'Documentación de respaldo comercial',
     'Consulta técnica especializada',
   ],
 };
