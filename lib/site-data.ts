@@ -529,14 +529,14 @@ export const resourceCatalogs = [
     href: assets.resourcesDocs.equiposBombeo,
   },
   {
+    title: 'Catálogo de Sellos Mecánicos',
+    description: 'Soluciones avanzadas de sellado para bombas y equipos rotativos, optimizando la confiabilidad y reduciendo fugas.',
+    href: assets.resourcesDocs.sellosMecanicos,
+  },
+  {
     title: 'Instrumentación & Control',
     description: 'Dispositivos de medición, monitoreo y sistemas de control para automatización y eficiencia de procesos industriales.',
     href: assets.resourcesDocs.instrumentacionControl,
-  },
-  {
-    title: 'Brochure de productos destacados',
-    description: 'Selección de líneas de solución para bombeo, protección, reparación y continuidad operativa.',
-    href: assets.resourcesDocs.brochureProductos,
   },
   {
     title: 'Brochure de servicios industriales especializados',
@@ -568,10 +568,10 @@ export const resourcePage = {
     'Para documentación técnica más específica, fichas técnicas, información por aplicación o requerimientos particulares, le invitamos a contactarnos para brindarle una atención más precisa y alineada a su necesidad.',
   requestOptions: [
     'Catálogo de Equipos de Bombeo',
+    'Catálogo de Sellos Mecánicos',
     'Instrumentación & Control',
-    'Catálogo de soluciones UPS',
     'Brochure de servicios industriales especializados',
-    'Brochure de productos destacados',
+    'Catálogo de soluciones UPS',
     'Presentación corporativa',
     'Fichas técnicas',
     'Hojas de datos',

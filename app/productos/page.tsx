@@ -210,14 +210,16 @@ export default function ProductsPage() {
           <div className="mx-auto mt-12 grid max-w-6xl gap-6 sm:grid-cols-2 xl:grid-cols-4">
             {manufacturerLogos.map((logo, index) => (
               <Reveal key={logo.name} delay={index * 0.05}>
-                <div className="flex min-h-[118px] items-center justify-center rounded-[24px] border border-white/12 bg-[linear-gradient(180deg,#ffffff_0%,#f4f7fb_100%)] px-8 py-6 shadow-[0_22px_50px_rgba(8,17,35,0.22)]">
-                  <Image
-                    src={logo.src}
-                    alt={logo.name}
-                    width={210}
-                    height={70}
-                    className={`w-auto object-contain ${index < 2 ? 'max-h-16 scale-[1.12]' : 'max-h-14'}`}
-                  />
+                <div className="flex min-h-[118px] items-center justify-center rounded-[24px] border border-white/15 bg-white px-8 py-6 shadow-[0_22px_50px_rgba(8,17,35,0.22)]">
+                  <div className="flex w-full items-center justify-center rounded-[18px] bg-white px-4 py-3">
+                    <Image
+                      src={logo.src}
+                      alt={logo.name}
+                      width={210}
+                      height={70}
+                      className={`w-auto object-contain ${index < 2 ? 'max-h-16 scale-[1.12]' : 'max-h-14'}`}
+                    />
+                  </div>
                 </div>
               </Reveal>
             ))}

@@ -20,9 +20,9 @@ export function ManufacturerStrip() {
               {manufacturerLogos.map((logo) => (
                 <div
                   key={logo.name}
-                  className="group flex min-h-[150px] items-center justify-center rounded-[28px] border border-[rgba(31,44,70,0.08)] bg-[linear-gradient(180deg,#fbfcfe_0%,#f1f5fa_100%)] px-6 py-6 shadow-[0_18px_50px_rgba(15,23,42,0.07)] transition-transform duration-300 hover:-translate-y-0.5"
+                  className="group flex min-h-[150px] items-center justify-center rounded-[28px] border border-[rgba(31,44,70,0.08)] bg-white px-6 py-6 shadow-[0_18px_50px_rgba(15,23,42,0.07)] transition-transform duration-300 hover:-translate-y-0.5"
                 >
-                  <div className="relative flex h-[86px] w-full items-center justify-center">
+                  <div className="relative flex h-[86px] w-full items-center justify-center rounded-[20px] bg-white px-4 py-3">
                     <Image
                       src={logo.src}
                       alt={logo.name}

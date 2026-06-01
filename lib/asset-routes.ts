@@ -89,9 +89,10 @@ export const assets = {
   },
   resourcesDocs: {
     equiposBombeo: '/docs/resources/portafolio-equipos-bombeo.pdf',
-    solucionesUps: '/docs/resources/catalogo-soluciones-ups.pdf',
-    serviciosEspecializados: '/docs/resources/brochure-servicios-industriales-especializados.pdf',
+    sellosMecanicos: '/docs/resources/catalogo-sellos-mecanicos.pdf',
     instrumentacionControl: '/docs/resources/brochure-instrumentacion-control.pdf',
+    serviciosEspecializados: '/docs/resources/brochure-servicios-industriales-especializados.pdf',
+    solucionesUps: '/docs/resources/catalogo-soluciones-ups.pdf',
     brochureProductos: '/docs/resources/brochure-productos-destacados.pdf',
     presentacionCorporativa: '/docs/resources/presentacion-corporativa-qts.pdf',
   },
